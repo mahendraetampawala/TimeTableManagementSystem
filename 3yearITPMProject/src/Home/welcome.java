@@ -15,6 +15,7 @@ import Lecturers_Management.AddingLecturers;
 import Sessions.AddSessions;
 
 import Subjects.AddSubjects;
+import Timetables.LecturerTimeTable;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -170,6 +171,13 @@ public class welcome {
 		JButton btnNewButton_9 = new JButton("Generate Timetables");
 		btnNewButton_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				
+				LecturerTimeTable lectable=new LecturerTimeTable();
+				lectable.main(null);
+				frame.setVisible(false);
+				
+			
 			}
 		});
 		btnNewButton_9.setFont(new Font("Times New Roman", Font.BOLD, 20));

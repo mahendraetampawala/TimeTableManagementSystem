@@ -39,6 +39,7 @@ import Home.welcome;
 import Sessions.AddSessions;
 
 import Subjects.AddSubjects;
+import Timetables.LecturerTimeTable;
 
 import javax.swing.JCheckBox;
 import javax.swing.JSpinner;
@@ -185,6 +186,8 @@ public class AddingLecturers {
 		JButton btnNewButton_2 = new JButton("Students");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+			
 				
 			}
 		});
@@ -254,6 +257,18 @@ public class AddingLecturers {
 		panel_1.add(btnNewButton_8);
 		
 		JButton btnNewButton_9 = new JButton("Generate Timetables");
+		btnNewButton_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+
+				
+				LecturerTimeTable lectable=new LecturerTimeTable();
+				lectable.main(null);
+				frame.setVisible(false);
+				
+			
+			}
+		});
 		btnNewButton_9.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_9.setBackground(Color.CYAN);
 		btnNewButton_9.setBounds(10, 512, 213, 38);

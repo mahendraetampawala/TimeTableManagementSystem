@@ -13,7 +13,8 @@ import javax.swing.SwingConstants;
 import javax.swing.table.TableColumnModel;
 
 import Connection.DBConnection;
-
+import Lecturers_Management.AddingLecturers;
+import Sessions.AddSessions;
 import net.proteanit.sql.DbUtils;
 
 import javax.swing.JButton;
@@ -96,6 +97,15 @@ public class StudentTimeTable {
 		panel_1.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Lecturers");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				AddingLecturers addlecturers=new AddingLecturers();
+				addlecturers.main(null);
+				frame.setVisible(false);
+			
+			}
+		});
 		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_1.setBackground(Color.CYAN);
 		btnNewButton_1.setBounds(10, 65, 213, 38);
@@ -120,6 +130,15 @@ public class StudentTimeTable {
 		panel_1.add(btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("Sessions");
+		btnNewButton_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				AddSessions addsessions=new AddSessions();
+				addsessions.main(null);
+				frame.setVisible(false);
+			
+			}
+		});
 		btnNewButton_5.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_5.setBackground(Color.CYAN);
 		btnNewButton_5.setBounds(10, 289, 213, 38);
@@ -144,6 +163,17 @@ public class StudentTimeTable {
 		panel_1.add(btnNewButton_8);
 		
 		JButton btnNewButton_9 = new JButton("Generate Timetables");
+		btnNewButton_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				
+				LecturerTimeTable lectable=new LecturerTimeTable();
+				lectable.main(null);
+				frame.setVisible(false);
+				
+			
+			}
+		});
 		btnNewButton_9.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_9.setBackground(Color.CYAN);
 		btnNewButton_9.setBounds(10, 512, 213, 38);
@@ -162,6 +192,13 @@ public class StudentTimeTable {
 		frame.getContentPane().add(panel_2);
 		
 		JButton btnNewButton_11 = new JButton("Lecturers");
+		btnNewButton_11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LecturerTimeTable ltimetable=new LecturerTimeTable();
+				ltimetable.main(null);
+				frame.setVisible(false);
+			}
+		});
 		btnNewButton_11.setForeground(Color.BLACK);
 		btnNewButton_11.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_11.setBackground(new Color(204, 255, 255));
@@ -169,12 +206,28 @@ public class StudentTimeTable {
 		panel_2.add(btnNewButton_11);
 		
 		JButton btnNewButton_12 = new JButton("Student");
+		btnNewButton_12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				StudentTimeTable studenttt=new StudentTimeTable();
+				studenttt.main(null);
+				frame.setVisible(false);
+			
+			}
+		});
 		btnNewButton_12.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_12.setBackground(new Color(204, 255, 255));
 		btnNewButton_12.setBounds(1001, 9, 266, 58);
 		panel_2.add(btnNewButton_12);
 		
 		JButton btnNewButton_12_1 = new JButton("Location");
+		btnNewButton_12_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LocationTimeTable locationtt=new LocationTimeTable();
+				locationtt.main(null);
+				frame.setVisible(false);
+			}
+		});
 		btnNewButton_12_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_12_1.setBackground(new Color(204, 255, 255));
 		btnNewButton_12_1.setBounds(499, 9, 266, 58);
