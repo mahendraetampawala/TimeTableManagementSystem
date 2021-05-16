@@ -11,10 +11,12 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 public class StudentTimeTable {
 
 	private JFrame frame;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -161,33 +163,40 @@ public class StudentTimeTable {
 		panel_2.add(btnNewButton_12_1);
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setLayout(null);
 		panel_3.setBackground(new Color(204, 255, 102));
 		panel_3.setBounds(253, 177, 1277, 526);
 		frame.getContentPane().add(panel_3);
+		panel_3.setLayout(null);
 		
 		JButton btnNewButton_14 = new JButton("Print");
+		btnNewButton_14.setBounds(1039, 30, 228, 40);
 		btnNewButton_14.setFont(new Font("Times New Roman", Font.BOLD, 19));
 		btnNewButton_14.setBackground(Color.CYAN);
-		btnNewButton_14.setBounds(1039, 30, 228, 40);
 		panel_3.add(btnNewButton_14);
 		
 		JButton btnNewButton_15 = new JButton("Generate");
+		btnNewButton_15.setBounds(771, 30, 228, 40);
 		btnNewButton_15.setFont(new Font("Times New Roman", Font.BOLD, 19));
 		btnNewButton_15.setBackground(Color.CYAN);
-		btnNewButton_15.setBounds(771, 30, 228, 40);
 		panel_3.add(btnNewButton_15);
 		
 		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(318, 31, 339, 39);
 		comboBox.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		comboBox.setBackground(Color.WHITE);
-		comboBox.setBounds(318, 31, 339, 39);
 		panel_3.add(comboBox);
 		
 		JLabel lblNewLabel_1 = new JLabel("Lecturer Name");
-		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		lblNewLabel_1.setBounds(176, 30, 132, 40);
+		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		panel_3.add(lblNewLabel_1);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 80, 1257, 436);
+		panel_3.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
