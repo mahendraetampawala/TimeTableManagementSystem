@@ -495,6 +495,14 @@ public class ManageSessions {
 		panel_5.add(comboBox);
 		comboBox.setBackground(new Color(255, 255, 255));
 		
+		 comboBoxLec1_3_1 = new JComboBox();
+		comboBoxLec1_3_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		comboBoxLec1_3_1.setBackground(Color.WHITE);
+		comboBoxLec1_3_1.setBounds(775, 293, 168, 36);
+		panel_5.add(comboBoxLec1_3_1);
+		
+		
+		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 61, 705, 174);
 		panel_5.add(scrollPane);
@@ -804,11 +812,7 @@ public class ManageSessions {
 		lblNewLabel_11_2.setBounds(642, 291, 142, 29);
 		panel_5.add(lblNewLabel_11_2);
 		
-		JComboBox comboBoxLec1_3_1 = new JComboBox();
-		comboBoxLec1_3_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		comboBoxLec1_3_1.setBackground(Color.WHITE);
-		comboBoxLec1_3_1.setBounds(775, 293, 168, 36);
-		panel_5.add(comboBoxLec1_3_1);
+	
 		
 		
 		
