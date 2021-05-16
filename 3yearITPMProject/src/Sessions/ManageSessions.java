@@ -55,8 +55,8 @@ public class ManageSessions {
 	JComboBox comboBoxLec1_1;
 	private JTextField textField_1;
 	//JSpinner spinner,spinner_1,spinner_1_1;
-	JComboBox comboBoxLec1,comboBox_1,comboBox_2,comboBox_3,comboBoxLec1_3,comboBoxLec1_3_1;
-	
+	JComboBox comboBoxLec1,comboBox_1,comboBox_2,comboBox_3,comboBoxLec1_3;
+	JComboBox comboBoxLec1_3_1;
 	private JTextField textField;
 	public static void main(String[] args) {
 		DBConnection.connect();
@@ -488,19 +488,12 @@ public class ManageSessions {
 		btnNewButton_13.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_13.setBackground(new Color(0, 255, 255));
 		
-		 comboBox = new JComboBox();
+		comboBox = new JComboBox();
 		comboBox.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Tutorials", "Labs", "Lecturers"}));
 		comboBox.setBounds(341, 12, 339, 39);
 		panel_5.add(comboBox);
 		comboBox.setBackground(new Color(255, 255, 255));
-		
-		
-		 comboBoxLec1_3_1 = new JComboBox();
-			comboBoxLec1_3_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
-			comboBoxLec1_3_1.setBackground(Color.WHITE);
-			comboBoxLec1_3_1.setBounds(775, 289, 168, 36);
-			panel_5.add(comboBoxLec1_3_1);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 61, 705, 174);
@@ -542,7 +535,7 @@ public class ManageSessions {
                  	String getsubjectname=(String)comboBoxLec1_3.getSelectedItem();
                  	comboBoxLec1_3.setSelectedItem(subjectName);
                  
-                 	String date=table.getValueAt(selectedRow, 10).toString();
+                 String date=table.getValueAt(selectedRow, 10).toString();
                 	String getdate=(String)comboBoxLec1_3_1.getSelectedItem();
                 	comboBoxLec1_3_1.setSelectedItem(date);
                  	
@@ -810,6 +803,12 @@ public class ManageSessions {
 		lblNewLabel_11_2.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		lblNewLabel_11_2.setBounds(642, 291, 142, 29);
 		panel_5.add(lblNewLabel_11_2);
+		
+		JComboBox comboBoxLec1_3_1 = new JComboBox();
+		comboBoxLec1_3_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		comboBoxLec1_3_1.setBackground(Color.WHITE);
+		comboBoxLec1_3_1.setBounds(775, 293, 168, 36);
+		panel_5.add(comboBoxLec1_3_1);
 		
 		
 		
