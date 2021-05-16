@@ -56,6 +56,7 @@ public class ManageSessions {
 	private JTextField textField_1;
 	//JSpinner spinner,spinner_1,spinner_1_1;
 	JComboBox comboBoxLec1,comboBox_1,comboBox_2,comboBox_3,comboBoxLec1_3;
+	JComboBox comboBoxLec1_3_1;
 	private JTextField textField;
 	public static void main(String[] args) {
 		DBConnection.connect();
@@ -533,8 +534,10 @@ public class ManageSessions {
                 String subjectName=table.getValueAt(selectedRow, 9).toString();
                  	String getsubjectname=(String)comboBoxLec1_3.getSelectedItem();
                  	comboBoxLec1_3.setSelectedItem(subjectName);
-                 	
-                
+                 
+                 	String date=table.getValueAt(selectedRow, 10).toString();
+                	String getdate=(String)comboBox_1.getSelectedItem();
+                	comboBoxLec1_3_1.setSelectedItem(date);
                  	
                  	//spinner_1.setValue(table.getValueAt(selectedRow, 6).toString());
                  	spinner.setValue((Double)table.getValueAt(selectedRow, 8));	
@@ -785,7 +788,7 @@ public class ManageSessions {
 		
 		JLabel lblNewLabel_11_1 = new JLabel("SessionID");
 		lblNewLabel_11_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lblNewLabel_11_1.setBounds(642, 291, 142, 29);
+		lblNewLabel_11_1.setBounds(642, 337, 142, 29);
 		panel_5.add(lblNewLabel_11_1);
 		
 		textField = new JTextField();
@@ -793,8 +796,19 @@ public class ManageSessions {
 		textField.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		textField.setColumns(10);
 		textField.setBackground(new Color(255, 255, 255));
-		textField.setBounds(775, 291, 168, 36);
+		textField.setBounds(775, 337, 168, 36);
 		panel_5.add(textField);
+		
+		JLabel lblNewLabel_11_2 = new JLabel("Date");
+		lblNewLabel_11_2.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lblNewLabel_11_2.setBounds(642, 291, 142, 29);
+		panel_5.add(lblNewLabel_11_2);
+		
+		 comboBoxLec1_3_1 = new JComboBox();
+		comboBoxLec1_3_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		comboBoxLec1_3_1.setBackground(Color.WHITE);
+		comboBoxLec1_3_1.setBounds(775, 289, 168, 36);
+		panel_5.add(comboBoxLec1_3_1);
 		
 	
 		

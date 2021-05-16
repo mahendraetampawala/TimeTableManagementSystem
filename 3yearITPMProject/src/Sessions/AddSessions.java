@@ -44,7 +44,7 @@ import javax.swing.DefaultComboBoxModel;
 public class AddSessions {
 
 	private JFrame frame;
-	private JComboBox comboBoxLec1,comboBox_1,comboBox_2,comboBox_3;
+	private JComboBox comboBoxLec1,comboBox_1,comboBox_2,comboBox_3,comboBox_2_1;
 
 	/**
 	 * Launch the application.
@@ -52,7 +52,7 @@ public class AddSessions {
 	PreparedStatement pst=null;
 	ResultSet rs = null;
 	JSpinner spinner,spinner_1,spinner_1_1,spinner_2;
-	JComboBox comboBox_1_1_1;
+	JComboBox comboBox_1_1_1,comboBox_1_1_1_1;
 	public static void main(String[] args) {
 		DBConnection.connect();
 		EventQueue.invokeLater(new Runnable() {
@@ -445,6 +445,7 @@ public class AddSessions {
 							String duration=spinner.getValue().toString();
 							String starttime=spinner_1.getValue().toString();
 							String endtime=spinner_1_1.getValue().toString();
+							String date=comboBox_2_1.getSelectedItem().toString();
 							
 				               //String spinner=spinner;
 				               //String value =spinner.getValue().toString();
@@ -459,7 +460,7 @@ public class AddSessions {
 		                	Connection con = DBConnection.connect();
 
 		                    String query = "INSERT INTO Sessions values(null,'" + Lecturer1 + "','" + Lecturer2 + "','" + Tag + "','" +
-		                    		Group + "','" + numberofstudents + "','" + starttime + "','"+ endtime +"','"+ duration +"','"+ subjectname +"')";
+		                    		Group + "','" + numberofstudents + "','" + starttime + "','"+ endtime +"','"+ duration +"','"+ subjectname +"','"+ date +"')";
 
 		                    java.sql.Statement sta = con.createStatement();
 		                    int xx = sta.executeUpdate(query);
@@ -492,6 +493,7 @@ public class AddSessions {
 		    				comboBox_3.setSelectedItem(null);
 		    				//comboBox_1_1.setSelectedItem(null);
 		    				comboBox_1_1_1.setSelectedItem(null);
+		    				comboBox_2_1.setSelectedItem(null);
 		                    
 		                   
 		                
@@ -541,6 +543,7 @@ public class AddSessions {
 				comboBox_3.setSelectedItem(null);
 				//comboBox_1_1.setSelectedItem(null);
 				comboBox_1_1_1.setSelectedItem(null);
+				comboBox_2_1.setSelectedItem(null);
 				//textField.setText(null);comboBox_2
 			
 			}
@@ -626,6 +629,18 @@ public class AddSessions {
 		comboBox_1_1_1.setBackground(new Color(255, 255, 255));
 		comboBox_1_1_1.setBounds(699, 332, 229, 36);
 		panel_3.add(comboBox_1_1_1);
+		
+		JLabel lblNewLabel_11_1 = new JLabel("Date");
+		lblNewLabel_11_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lblNewLabel_11_1.setBounds(535, 393, 142, 29);
+		panel_3.add(lblNewLabel_11_1);
+		
+		JComboBox comboBox_2_1 = new JComboBox();
+		comboBox_2_1.setModel(new DefaultComboBoxModel(new String[] {"Monday", "Tuesday"}));
+		comboBox_2_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		comboBox_2_1.setBackground(Color.WHITE);
+		comboBox_2_1.setBounds(699, 380, 225, 36);
+		panel_3.add(comboBox_2_1);
 		
 		fillcombobox();
 		fillcombobox2();
