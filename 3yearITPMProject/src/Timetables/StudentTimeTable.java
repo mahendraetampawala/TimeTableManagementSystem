@@ -6,12 +6,29 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.table.TableColumnModel;
+
+import Connection.DBConnection;
+
+import net.proteanit.sql.DbUtils;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.awt.event.ActionEvent;
+import javax.swing.DefaultComboBoxModel;
 
 public class StudentTimeTable {
 
@@ -21,6 +38,7 @@ public class StudentTimeTable {
 	/**
 	 * Launch the application.
 	 */
+	JComboBox comboBox;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -169,18 +187,85 @@ public class StudentTimeTable {
 		panel_3.setLayout(null);
 		
 		JButton btnNewButton_14 = new JButton("Print");
+		btnNewButton_14.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+
+				
+				
+				MessageFormat header = new MessageFormat("Student TimeTable - Group "+comboBox.getSelectedItem().toString());
+				Date date = new Date();  
+			    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd  HH:mm:ss.SSS");  
+			    String strDate= formatter.format(date);  
+				MessageFormat footer = new MessageFormat("Timetable generated on:" +strDate);
+				
+				
+				try {
+					
+					table.print(JTable.PrintMode.FIT_WIDTH,header,footer);
+					
+					
+				}catch(Exception e1) {
+					
+					JOptionPane.showMessageDialog(null, "       Unable to print","Alert",JOptionPane.WARNING_MESSAGE);
+					
+				}
+			
+			
+				
+			}
+		});
 		btnNewButton_14.setBounds(1039, 30, 228, 40);
 		btnNewButton_14.setFont(new Font("Times New Roman", Font.BOLD, 19));
 		btnNewButton_14.setBackground(Color.CYAN);
 		panel_3.add(btnNewButton_14);
 		
 		JButton btnNewButton_15 = new JButton("Generate");
+		btnNewButton_15.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+
+				if(comboBox.getSelectedItem().toString().equals(" ") || comboBox.getSelectedItem().toString().equals("None"))
+				{
+					
+					JOptionPane.showMessageDialog(null, "    Please Select Student Group  ","Failed",JOptionPane.WARNING_MESSAGE);
+				}
+				else {
+			try {
+				
+				Connection con = DBConnection.connect();
+					
+					
+					String sql="";
+					PreparedStatement pst=con.prepareStatement(sql);
+					ResultSet rs=pst.executeQuery();
+					table.setModel(DbUtils.resultSetToTableModel(rs));
+					
+					
+					
+					
+					TableColumnModel columnModel = table.getColumnModel();
+					columnModel.getColumn(0).setPreferredWidth(5);
+					columnModel.getColumn(1).setPreferredWidth(5);
+					columnModel.getColumn(2).setPreferredWidth(5);
+					columnModel.getColumn(3).setPreferredWidth(600);
+					
+					
+				}
+				catch(Exception ex) {
+					ex.printStackTrace();
+				}}
+			
+				
+			}
+		});
 		btnNewButton_15.setBounds(771, 30, 228, 40);
 		btnNewButton_15.setFont(new Font("Times New Roman", Font.BOLD, 19));
 		btnNewButton_15.setBackground(Color.CYAN);
 		panel_3.add(btnNewButton_15);
 		
-		JComboBox comboBox = new JComboBox();
+		 comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"None"}));
 		comboBox.setBounds(318, 31, 339, 39);
 		comboBox.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		comboBox.setBackground(Color.WHITE);

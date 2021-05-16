@@ -8,6 +8,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JScrollPane;
@@ -17,12 +18,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.awt.event.ActionEvent;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
 
 import Connection.DBConnection;
+
 import net.proteanit.sql.DbUtils;
 
 public class LecturerTimeTable {
@@ -215,6 +221,29 @@ public class LecturerTimeTable {
 		JButton btnNewButton_14 = new JButton("Print");
 		btnNewButton_14.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+
+				
+				
+				MessageFormat header = new MessageFormat("Lecturer TimeTable - "+ comboBox.getSelectedItem().toString());
+				Date date = new Date();  
+			    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd  HH:mm:ss.SSS");  
+			    String strDate= formatter.format(date);  
+				MessageFormat footer = new MessageFormat("Timetable generated on:" +strDate);
+				
+				try {
+					
+					table.print(JTable.PrintMode.FIT_WIDTH,header,footer);
+					
+					
+				}catch(Exception e1) {
+					
+					JOptionPane.showMessageDialog(null, "       Unable to print","Alert",JOptionPane.WARNING_MESSAGE);
+					
+				}
+			
+			
+				
 			}
 		});
 		btnNewButton_14.setFont(new Font("Times New Roman", Font.BOLD, 19));
@@ -226,15 +255,15 @@ public class LecturerTimeTable {
 		btnNewButton_15.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				/*
 				Connection conn = DBConnection.connect();
 				//Address + ', ' + PostalCode
-				/*
+				
 				 * SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
 					FROM Orders
 					INNER JOIN Customers
 					ON Orders.CustomerID=Customers.CustomerID;
-				 */
+				
 	            try {
 	            	//String sql="Select StartTime+','+EndTime AS TimeSlots from Sessions where Lecturer1='Mahendra'";
 	            	String sql="SELECT Sessions.StartTime+','+Sessions.EndTime AS TimeSlots,Lecturers";
@@ -246,8 +275,39 @@ public class LecturerTimeTable {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-	            
+	             */
 				
+
+				
+				if(comboBox.getSelectedItem().toString().equals("") || comboBox.getSelectedItem().toString().equals(""))
+				{
+					
+					JOptionPane.showMessageDialog(null, "   Please Select Lecturer Name","Failed",JOptionPane.WARNING_MESSAGE);
+				}
+				else {
+				try {
+					
+					Connection conn = DBConnection.connect();
+					
+					String sql="";
+					PreparedStatement pst=conn.prepareStatement(sql);
+					ResultSet rs=pst.executeQuery();
+					table.setModel(DbUtils.resultSetToTableModel(rs));
+					
+					
+					TableColumnModel columnModel = table.getColumnModel();
+					columnModel.getColumn(0).setPreferredWidth(5);
+					columnModel.getColumn(1).setPreferredWidth(5);
+					columnModel.getColumn(2).setPreferredWidth(5);
+					columnModel.getColumn(3).setPreferredWidth(600);
+					
+					
+				}
+				catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			}
+			
 				
 			}
 		});
