@@ -184,7 +184,7 @@ public class LocationTimeTable {
 		comboBox.setBounds(318, 31, 339, 39);
 		panel_3.add(comboBox);
 		
-		JLabel lblNewLabel_1 = new JLabel("Lecturer Name");
+		JLabel lblNewLabel_1 = new JLabel("Location");
 		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		lblNewLabel_1.setBounds(176, 30, 132, 40);
 		panel_3.add(lblNewLabel_1);

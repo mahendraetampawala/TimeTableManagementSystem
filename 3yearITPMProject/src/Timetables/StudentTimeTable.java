@@ -271,8 +271,8 @@ public class StudentTimeTable {
 		comboBox.setBackground(Color.WHITE);
 		panel_3.add(comboBox);
 		
-		JLabel lblNewLabel_1 = new JLabel("Lecturer Name");
-		lblNewLabel_1.setBounds(176, 30, 132, 40);
+		JLabel lblNewLabel_1 = new JLabel("Student Group Name");
+		lblNewLabel_1.setBounds(135, 30, 173, 40);
 		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		panel_3.add(lblNewLabel_1);
 		
