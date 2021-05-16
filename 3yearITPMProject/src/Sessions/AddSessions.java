@@ -635,11 +635,11 @@ public class AddSessions {
 		lblNewLabel_11_1.setBounds(535, 393, 142, 29);
 		panel_3.add(lblNewLabel_11_1);
 		
-		JComboBox comboBox_2_1 = new JComboBox();
+		comboBox_2_1 = new JComboBox();
 		comboBox_2_1.setModel(new DefaultComboBoxModel(new String[] {"Monday", "Tuesday"}));
 		comboBox_2_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		comboBox_2_1.setBackground(Color.WHITE);
-		comboBox_2_1.setBounds(699, 380, 225, 36);
+		comboBox_2_1.setBounds(699, 380, 229, 36);
 		panel_3.add(comboBox_2_1);
 		
 		fillcombobox();

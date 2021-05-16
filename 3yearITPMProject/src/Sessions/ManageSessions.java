@@ -45,7 +45,7 @@ public class ManageSessions {
 	public JFrame frame;
 	private JTable table;
 	//private JSpinner spinner_1,spinner_1_1;
-
+	
 	/**
 	 * Launch the application.
 	 */
@@ -55,8 +55,8 @@ public class ManageSessions {
 	JComboBox comboBoxLec1_1;
 	private JTextField textField_1;
 	//JSpinner spinner,spinner_1,spinner_1_1;
-	JComboBox comboBoxLec1,comboBox_1,comboBox_2,comboBox_3,comboBoxLec1_3;
-	JComboBox comboBoxLec1_3_1;
+	JComboBox comboBoxLec1,comboBox_1,comboBox_2,comboBox_3,comboBoxLec1_3,comboBoxLec1_3_1;
+	
 	private JTextField textField;
 	public static void main(String[] args) {
 		DBConnection.connect();
@@ -495,6 +495,13 @@ public class ManageSessions {
 		panel_5.add(comboBox);
 		comboBox.setBackground(new Color(255, 255, 255));
 		
+		
+		 comboBoxLec1_3_1 = new JComboBox();
+			comboBoxLec1_3_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
+			comboBoxLec1_3_1.setBackground(Color.WHITE);
+			comboBoxLec1_3_1.setBounds(775, 289, 168, 36);
+			panel_5.add(comboBoxLec1_3_1);
+		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 61, 705, 174);
 		panel_5.add(scrollPane);
@@ -536,7 +543,7 @@ public class ManageSessions {
                  	comboBoxLec1_3.setSelectedItem(subjectName);
                  
                  	String date=table.getValueAt(selectedRow, 10).toString();
-                	String getdate=(String)comboBox_1.getSelectedItem();
+                	String getdate=(String)comboBoxLec1_3_1.getSelectedItem();
                 	comboBoxLec1_3_1.setSelectedItem(date);
                  	
                  	//spinner_1.setValue(table.getValueAt(selectedRow, 6).toString());
@@ -554,17 +561,17 @@ public class ManageSessions {
 		});
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null},
 			},
 			new String[] {
-				"ID", "Lecturer 1", "Lecturer 2", "Subject Code", "Subject Name", "Group ID", "Tag"
+				"ID", "Lecturer 1", "Lecturer 2", "Subject Code", "Subject Name", "Group ID", "Tag", "date"
 			}
 		) {
 			Class[] columnTypes = new Class[] {
-				Integer.class, String.class, String.class, Float.class, String.class, Float.class, String.class
+				Integer.class, String.class, String.class, Float.class, String.class, Float.class, String.class, Object.class
 			};
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
@@ -626,7 +633,7 @@ public class ManageSessions {
 					}else{
 					Connection con = DBConnection.connect();
 					
-					String query="Update Sessions set Lecturer1='"+comboBoxLec1.getSelectedItem()+"',Lecturer2='"+comboBox_1.getSelectedItem()+"',Tag='"+comboBox_2.getSelectedItem()+"',StudentGroup='"+comboBox_3.getSelectedItem()+"',NumberOfStudents='"+textField_1.getText()+"',Duration='"+spinner.getValue()+"',StartTime='"+spinner_2.getValue()+"' ,EndTime='"+spinner_3.getValue()+"' ,SubjectName='"+comboBoxLec1_3.getSelectedItem()+"'where SessionID='"+textField.getText()+"' ";//spinner_1
+					String query="Update Sessions set Lecturer1='"+comboBoxLec1.getSelectedItem()+"',Lecturer2='"+comboBox_1.getSelectedItem()+"',Tag='"+comboBox_2.getSelectedItem()+"',StudentGroup='"+comboBox_3.getSelectedItem()+"',NumberOfStudents='"+textField_1.getText()+"',Duration='"+spinner.getValue()+"',StartTime='"+spinner_2.getValue()+"' ,EndTime='"+spinner_3.getValue()+"' ,SubjectName='"+comboBoxLec1_3.getSelectedItem()+"',Date='"+comboBoxLec1_3_1.getSelectedItem()+"' where SessionID='"+textField.getText()+"' ";//spinner_1
 					PreparedStatement pst=con.prepareStatement(query);
 					pst.executeUpdate();
 					JOptionPane.showMessageDialog(null, "Data Updated");
@@ -804,11 +811,7 @@ public class ManageSessions {
 		lblNewLabel_11_2.setBounds(642, 291, 142, 29);
 		panel_5.add(lblNewLabel_11_2);
 		
-		 comboBoxLec1_3_1 = new JComboBox();
-		comboBoxLec1_3_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		comboBoxLec1_3_1.setBackground(Color.WHITE);
-		comboBoxLec1_3_1.setBounds(775, 289, 168, 36);
-		panel_5.add(comboBoxLec1_3_1);
+		
 		
 	
 		
