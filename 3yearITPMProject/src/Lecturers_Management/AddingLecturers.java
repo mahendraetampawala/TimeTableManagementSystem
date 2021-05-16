@@ -35,11 +35,11 @@ import javax.swing.border.TitledBorder;
 
 import Connection.DBConnection;
 import Home.welcome;
-import Session_Consective.AddSessionCategory;
+
 import Sessions.AddSessions;
-import Student_Groups.AddStudentGroups;
+
 import Subjects.AddSubjects;
-import Tags.AddTags;
+
 import javax.swing.JCheckBox;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
@@ -185,9 +185,7 @@ public class AddingLecturers {
 		JButton btnNewButton_2 = new JButton("Students");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AddStudentGroups addstudentgroups=new AddStudentGroups();
-				addstudentgroups.main(null);
-				frame.setVisible(false);
+				
 			}
 		});
 		btnNewButton_2.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -236,9 +234,6 @@ public class AddingLecturers {
 		JButton btnNewButton_7 = new JButton("Tags");
 		btnNewButton_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AddTags addtags=new AddTags();
-				addtags.main(null);
-				frame.setVisible(false);
 				
 			}
 		});
@@ -250,9 +245,7 @@ public class AddingLecturers {
 		JButton btnNewButton_8 = new JButton("Session Rooms");
 		btnNewButton_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AddSessionCategory addsessioncategory=new AddSessionCategory();
-				addsessioncategory.main(null);
-				frame.setVisible(false);
+				
 			}
 		});
 		btnNewButton_8.setFont(new Font("Times New Roman", Font.BOLD, 20));

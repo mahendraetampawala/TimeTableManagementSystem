@@ -19,11 +19,11 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 
 import Connection.DBConnection;
-import Session_Consective.AddSessionCategory;
+
 import Sessions.AddSessions;
-import Student_Groups.AddStudentGroups;
+
 import Subjects.AddSubjects;
-import Tags.AddTags;
+
 
 import javax.swing.JTextField;
 import javax.swing.JComboBox;

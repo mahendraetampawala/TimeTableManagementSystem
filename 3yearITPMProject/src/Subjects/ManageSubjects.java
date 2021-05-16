@@ -12,10 +12,10 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 
 import Lecturers_Management.AddingLecturers;
-import Session_Consective.AddSessionCategory;
+
 import Sessions.AddSessions;
-import Student_Groups.AddStudentGroups;
-import Tags.AddTags;
+
+
 import net.proteanit.sql.DbUtils;
 
 import javax.swing.JButton;
@@ -138,9 +138,7 @@ public class ManageSubjects {
 		JButton btnNewButton_2 = new JButton("Students");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AddStudentGroups addstudentgrp=new AddStudentGroups();
-				addstudentgrp.main(null);
-				frame.setVisible(false);
+				
 			}
 		});
 		btnNewButton_2.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -190,9 +188,7 @@ public class ManageSubjects {
 		JButton btnNewButton_7 = new JButton("Tags");
 		btnNewButton_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AddTags addtags=new AddTags();
-				addtags.main(null);
-				frame.setVisible(false);
+				
 			}
 		});
 		btnNewButton_7.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -203,9 +199,7 @@ public class ManageSubjects {
 		JButton btnNewButton_8 = new JButton("Session Rooms");
 		btnNewButton_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AddSessionCategory addsessioncategory=new AddSessionCategory();
-				addsessioncategory.main(null);
-				frame.setVisible(false);
+				
 			}
 		});
 		btnNewButton_8.setFont(new Font("Times New Roman", Font.BOLD, 20));

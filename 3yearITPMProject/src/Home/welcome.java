@@ -13,7 +13,7 @@ import javax.swing.SwingConstants;
 
 import Lecturers_Management.AddingLecturers;
 import Sessions.AddSessions;
-import Student_Groups.AddStudentGroups;
+
 import Subjects.AddSubjects;
 
 import javax.swing.ImageIcon;
@@ -87,9 +87,7 @@ public class welcome {
 		JButton btnNewButton_2 = new JButton("Students");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				AddStudentGroups addingstudents=new AddStudentGroups();
-				addingstudents.main(null);
-				frame.setVisible(false);
+				
 			}
 		});
 		btnNewButton_2.setFont(new Font("Times New Roman", Font.BOLD, 20));
