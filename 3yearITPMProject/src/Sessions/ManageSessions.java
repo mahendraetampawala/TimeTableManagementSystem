@@ -891,7 +891,108 @@ public class ManageSessions {
 		 });
 	
 		
+		comboBoxLec1.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent arg0) {	
+		 		
+		 		String Lec1Name=(String)comboBoxLec1.getSelectedItem();
+				//String SubCode=(String)comboBox_1_1_1.getSelectedItem();
+				String SubName=(String)comboBoxLec1_3.getSelectedItem();
+				String tag=(String)comboBox_2.getSelectedItem();
+				String groupID=(String)comboBox_3.getSelectedItem();
+				String studentCount=textField_1.getText().toString();
+				String duration=textField_3.getText().toString();
+				
+				
+				
+			
+				
+				String sessionID=Lec1Name+"."+SubName+"."+tag+"."+groupID+"."+studentCount+"."+duration;
+				textField.setText(sessionID);
+				
+			}
+		 });
+		comboBox_2.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent arg0) {	
+		 		
+		 		String Lec1Name=(String)comboBoxLec1.getSelectedItem();
+				//String SubCode=(String)comboBox_1_1_1.getSelectedItem();
+				String SubName=(String)comboBoxLec1_3.getSelectedItem();
+				String tag=(String)comboBox_2.getSelectedItem();
+				String groupID=(String)comboBox_3.getSelectedItem();
+				String studentCount=textField_1.getText().toString();
+				String duration=textField_3.getText().toString();
+				
+				
+				
+			
+				
+				String sessionID=Lec1Name+"."+SubName+"."+tag+"."+groupID+"."+studentCount+"."+duration;
+				textField.setText(sessionID);
+				
+			}
+		 });
 		
+		comboBoxLec1_3.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent arg0) {	
+		 		
+		 		String Lec1Name=(String)comboBoxLec1.getSelectedItem();
+				//String SubCode=(String)comboBox_1_1_1.getSelectedItem();
+				String SubName=(String)comboBoxLec1_3.getSelectedItem();
+				String tag=(String)comboBox_2.getSelectedItem();
+				String groupID=(String)comboBox_3.getSelectedItem();
+				String studentCount=textField_1.getText().toString();
+				String duration=textField_3.getText().toString();
+				
+				
+				
+			
+				
+				String sessionID=Lec1Name+"."+SubName+"."+tag+"."+groupID+"."+studentCount+"."+duration;
+				textField.setText(sessionID);
+				
+			}
+		 });
+		comboBox_3.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent arg0) {	
+		 		
+		 		String Lec1Name=(String)comboBoxLec1.getSelectedItem();
+				//String SubCode=(String)comboBox_1_1_1.getSelectedItem();
+				String SubName=(String)comboBoxLec1_3.getSelectedItem();
+				String tag=(String)comboBox_2.getSelectedItem();
+				String groupID=(String)comboBox_3.getSelectedItem();
+				String studentCount=textField_1.getText().toString();
+				String duration=textField_3.getText().toString();
+				
+				
+				
+			
+				
+				String sessionID=Lec1Name+"."+SubName+"."+tag+"."+groupID+"."+studentCount+"."+duration;
+				textField.setText(sessionID);
+				
+			}
+		 });
+	
+		comboBox_3.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent arg0) {	
+		 		
+		 		String Lec1Name=(String)comboBoxLec1.getSelectedItem();
+				//String SubCode=(String)comboBox_1_1_1.getSelectedItem();
+				String SubName=(String)comboBoxLec1_3.getSelectedItem();
+				String tag=(String)comboBox_2.getSelectedItem();
+				String groupID=(String)comboBox_3.getSelectedItem();
+				String studentCount=textField_1.getText().toString();
+				String duration=textField_3.getText().toString();
+				
+				
+				
+			
+				
+				String sessionID=Lec1Name+"."+SubName+"."+tag+"."+groupID+"."+studentCount+"."+duration;
+				textField.setText(sessionID);
+				
+			}
+		 });
 		
 	
 		
