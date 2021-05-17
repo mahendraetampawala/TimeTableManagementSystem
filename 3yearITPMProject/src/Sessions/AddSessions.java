@@ -44,7 +44,7 @@ import javax.swing.DefaultComboBoxModel;
 public class AddSessions {
 
 	private JFrame frame;
-	private JComboBox comboBoxLec1,comboBox_1,comboBox_2,comboBox_3,comboBox_2_1;
+	private JComboBox comboBoxLec1,comboBox_1,comboBox_2,comboBox_3;
 
 	/**
 	 * Launch the application.
@@ -53,6 +53,7 @@ public class AddSessions {
 	ResultSet rs = null;
 	JSpinner spinner,spinner_1,spinner_1_1,spinner_2;
 	JComboBox comboBox_1_1_1,comboBox_1_1_1_1;
+	private JTextField textField;
 	public static void main(String[] args) {
 		DBConnection.connect();
 		EventQueue.invokeLater(new Runnable() {
@@ -128,6 +129,8 @@ public class AddSessions {
 			
 		}
 	}
+	
+
 	
 	public AddSessions() {
 		initialize();
@@ -456,8 +459,8 @@ public class AddSessions {
 							String duration=spinner.getValue().toString();
 							String starttime=spinner_1.getValue().toString();
 							String endtime=spinner_1_1.getValue().toString();
-							String date=comboBox_2_1.getSelectedItem().toString();
-							
+							//String date=comboBox_2_1.getSelectedItem().toString();
+							String sessionid=textField.getText();
 				               //String spinner=spinner;
 				               //String value =spinner.getValue().toString();
 				               
@@ -471,7 +474,7 @@ public class AddSessions {
 		                	Connection con = DBConnection.connect();
 
 		                    String query = "INSERT INTO Sessions values(null,'" + Lecturer1 + "','" + Lecturer2 + "','" + Tag + "','" +
-		                    		Group + "','" + numberofstudents + "','" + starttime + "','"+ endtime +"','"+ duration +"','"+ subjectname +"','"+ date +"')";
+		                    		Group + "','" + numberofstudents + "','" + starttime + "','"+ endtime +"','"+ duration +"','"+ subjectname +"','"+ sessionid +"')";
 
 		                    java.sql.Statement sta = con.createStatement();
 		                    int xx = sta.executeUpdate(query);
@@ -504,7 +507,7 @@ public class AddSessions {
 		    				comboBox_3.setSelectedItem(null);
 		    				//comboBox_1_1.setSelectedItem(null);
 		    				comboBox_1_1_1.setSelectedItem(null);
-		    				comboBox_2_1.setSelectedItem(null);
+		    				textField.setText(null);
 		                    
 		                   
 		                
@@ -554,7 +557,7 @@ public class AddSessions {
 				comboBox_3.setSelectedItem(null);
 				//comboBox_1_1.setSelectedItem(null);
 				comboBox_1_1_1.setSelectedItem(null);
-				comboBox_2_1.setSelectedItem(null);
+				textField.setText(null);
 				//textField.setText(null);comboBox_2
 			
 			}
@@ -641,17 +644,58 @@ public class AddSessions {
 		comboBox_1_1_1.setBounds(699, 332, 229, 36);
 		panel_3.add(comboBox_1_1_1);
 		
-		JLabel lblNewLabel_11_1 = new JLabel("Date");
+		JLabel lblNewLabel_11_1 = new JLabel("Session ID");
 		lblNewLabel_11_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lblNewLabel_11_1.setBounds(535, 393, 142, 29);
+		lblNewLabel_11_1.setBounds(535, 384, 142, 29);
 		panel_3.add(lblNewLabel_11_1);
 		
-		comboBox_2_1 = new JComboBox();
-		comboBox_2_1.setModel(new DefaultComboBoxModel(new String[] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}));
-		comboBox_2_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		comboBox_2_1.setBackground(Color.WHITE);
-		comboBox_2_1.setBounds(699, 380, 229, 36);
-		panel_3.add(comboBox_2_1);
+		textField = new JTextField();
+		textField.setFont(new Font("Times New Roman", Font.BOLD, 13));
+		textField.setEditable(false);
+		textField.setBounds(631, 385, 296, 34);
+		panel_3.add(textField);
+		textField.setColumns(10);
+		
+		JButton btnNewButton_13_1 = new JButton("Generate Session");
+		btnNewButton_13_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+
+				
+
+				
+
+				
+				
+				
+				String Lec1Name=(String)comboBoxLec1.getSelectedItem();
+				//String SubCode=(String)comboBox_1_1_1.getSelectedItem();
+				String SubName=(String)comboBox_1_1_1.getSelectedItem();
+				String tag=(String)comboBox_2.getSelectedItem();
+				String groupID=(String)comboBox_3.getSelectedItem();
+				String studentCount=spinner_2.getValue().toString();
+				String duration=spinner.getValue().toString();
+				
+				
+				
+			
+				
+				String sessionID=Lec1Name+"."+SubName+"."+tag+"."+groupID+"."+studentCount+"."+duration;
+				textField.setText(sessionID);
+				
+				
+			
+			
+				
+			
+				
+				
+			}
+		});
+		btnNewButton_13_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		btnNewButton_13_1.setBackground(Color.CYAN);
+		btnNewButton_13_1.setBounds(408, 465, 179, 54);
+		panel_3.add(btnNewButton_13_1);
 		
 		fillcombobox();
 		fillcombobox2();
