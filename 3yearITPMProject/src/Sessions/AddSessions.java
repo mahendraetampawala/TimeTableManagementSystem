@@ -51,9 +51,11 @@ public class AddSessions {
 	 */
 	PreparedStatement pst=null;
 	ResultSet rs = null;
-	JSpinner spinner,spinner_1,spinner_1_1,spinner_2;
+	JSpinner spinner_1,spinner_1_1,spinner_2;
 	JComboBox comboBox_1_1_1,comboBox_1_1_1_1;
 	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
 	public static void main(String[] args) {
 		DBConnection.connect();
 		EventQueue.invokeLater(new Runnable() {
@@ -130,7 +132,27 @@ public class AddSessions {
 		}
 	}
 	
-
+	
+	public void calculateDuration() {
+		//int sTime=(int) spinner_1.getValue();
+		//int endTime=(int) spinner_1_1.getValue();
+		/**
+		 * String starttime=spinner_1.getValue().toString();
+		String endtime=spinner_1_1.getValue().toString();
+		
+		String duration=""+endtime+"-"+starttime+"";
+		textField_1.setText(duration);
+		 */
+		
+		int st=(int) spinner_1.getValue();
+		int et=(int)spinner_1_1.getValue();
+		
+		int duration=et-st;
+		String du = String.valueOf(duration);
+		textField_2.setText(du);
+		
+	}
+	
 	
 	public AddSessions() {
 		initialize();
@@ -140,6 +162,8 @@ public class AddSessions {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(51, 0, 0));
 		frame.setBounds(30, 30, 1250, 750);
@@ -367,7 +391,7 @@ public class AddSessions {
 		
 		JLabel lblNewLabel_8 = new JLabel("Duration(Hours)");
 		lblNewLabel_8.setFont(new Font("Times New Roman", Font.BOLD, 19));
-		lblNewLabel_8.setBounds(535, 271, 160, 43);
+		lblNewLabel_8.setBounds(524, 179, 160, 43);
 		panel_3.add(lblNewLabel_8);
 		
 		JButton btnNewButton_13 = new JButton("Submit");
@@ -381,7 +405,7 @@ public class AddSessions {
 				try {
 					
 					
-					if(comboBoxLec1.getSelectedItem().equals("")||comboBox_1.getSelectedItem().equals("") ||comboBox_2.getSelectedItem().equals("")||comboBox_3.getSelectedItem().equals("")||comboBox_1_1_1.getSelectedItem().equals("")||spinner_1.getValue().equals("")||spinner_2.getValue().equals("")||spinner.getValue().equals("")||spinner_1_1.getValue().equals("")) {
+					if(comboBoxLec1.getSelectedItem().equals("")||comboBox_1.getSelectedItem().equals("") ||comboBox_2.getSelectedItem().equals("")||comboBox_3.getSelectedItem().equals("")||comboBox_1_1_1.getSelectedItem().equals("")||spinner_1.getValue().equals("")||spinner_2.getValue().equals("")||textField_2.getText().equals("")||spinner_1_1.getValue().equals("")) {
 						JOptionPane.showMessageDialog(null, "Please fill the form");
 						
 						 
@@ -456,7 +480,8 @@ public class AddSessions {
 							//String subjectcode=comboBox_1_1.getSelectedItem().toString();
 							String subjectname=comboBox_1_1_1.getSelectedItem().toString();
 							String numberofstudents=spinner_2.getValue().toString();
-							String duration=spinner.getValue().toString();
+							//String duration=spinner.getValue().toString();
+							String duration=textField_2.getText().toString();
 							String starttime=spinner_1.getValue().toString();
 							String endtime=spinner_1_1.getValue().toString();
 							//String date=comboBox_2_1.getSelectedItem().toString();
@@ -583,14 +608,14 @@ public class AddSessions {
 		 comboBox_2.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		 comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Tutorials", "Labs", "Lecturers"}));
 		 comboBox_2.setBackground(new Color(255, 255, 255));
-		comboBox_2.setBounds(289, 181, 511, 36);
+		comboBox_2.setBounds(289, 181, 225, 36);
 		panel_3.add(comboBox_2);
 		
 		 comboBox_3 = new JComboBox();
 		 comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"12.1", "12.2", "13.1", "13.2", "14.1", "14.2"}));
 		 comboBox_3.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		 comboBox_3.setBackground(new Color(255, 255, 255));
-		comboBox_3.setBounds(289, 227, 511, 36);
+		comboBox_3.setBounds(289, 227, 225, 36);
 		panel_3.add(comboBox_3);
 		
 		JLabel lblNewLabel_7 = new JLabel("Start Time");
@@ -605,16 +630,8 @@ public class AddSessions {
 		
 		JLabel lblNewLabel_11 = new JLabel("Subject Name");
 		lblNewLabel_11.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lblNewLabel_11.setBounds(535, 336, 142, 29);
+		lblNewLabel_11.setBounds(524, 236, 142, 29);
 		panel_3.add(lblNewLabel_11);
-		
-	    spinner = new JSpinner();
-		spinner.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		spinner.setModel(new SpinnerNumberModel(1, 1, 5, 1));
-		spinner.setForeground(Color.BLACK);
-		spinner.setBackground(Color.LIGHT_GRAY);
-		spinner.setBounds(699, 273, 225, 43);
-		panel_3.add(spinner);
 		
 		 spinner_1 = new JSpinner();
 		spinner_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -641,7 +658,7 @@ public class AddSessions {
 		 comboBox_1_1_1 = new JComboBox();
 		comboBox_1_1_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		comboBox_1_1_1.setBackground(new Color(255, 255, 255));
-		comboBox_1_1_1.setBounds(699, 332, 229, 36);
+		comboBox_1_1_1.setBounds(688, 232, 225, 36);
 		panel_3.add(comboBox_1_1_1);
 		
 		JLabel lblNewLabel_11_1 = new JLabel("Session ID");
@@ -674,7 +691,7 @@ public class AddSessions {
 				String tag=(String)comboBox_2.getSelectedItem();
 				String groupID=(String)comboBox_3.getSelectedItem();
 				String studentCount=spinner_2.getValue().toString();
-				String duration=spinner.getValue().toString();
+				String duration=textField_2.getText().toString();
 				
 				
 				
@@ -697,9 +714,28 @@ public class AddSessions {
 		btnNewButton_13_1.setBounds(408, 465, 179, 54);
 		panel_3.add(btnNewButton_13_1);
 		
+		JLabel lblNewLabel_11_2 = new JLabel("Subject Code");
+		lblNewLabel_11_2.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lblNewLabel_11_2.setBounds(524, 285, 142, 29);
+		panel_3.add(lblNewLabel_11_2);
+		
+		textField_1 = new JTextField();
+		textField_1.setFont(new Font("Times New Roman", Font.BOLD, 13));
+		textField_1.setEditable(false);
+		textField_1.setColumns(10);
+		textField_1.setBounds(688, 283, 225, 36);
+		panel_3.add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setEditable(false);
+		textField_2.setBounds(688, 179, 225, 43);
+		panel_3.add(textField_2);
+		textField_2.setColumns(10);
+		
 		fillcombobox();
 		fillcombobox2();
 		fillcombobox3();
+		calculateDuration();
 		//fillcombobox4();
 		
 	}
