@@ -10,6 +10,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 
 import Connection.DBConnection;
+
 import Home.welcome;
 import Lecturers_Management.AddingLecturers;
 
@@ -175,8 +176,6 @@ public class AddSessions {
 			
 		}
 	
-		
-		
 	}
 	
 	public AddSessions() {
@@ -427,6 +426,26 @@ public class AddSessions {
 				calculateDuration();
 				
 				
+				
+				String Lec1Name=(String)comboBoxLec1.getSelectedItem();
+				//String SubCode=(String)comboBox_1_1_1.getSelectedItem();
+				String SubName=(String)comboBox_1_1_1.getSelectedItem();
+				String tag=(String)comboBox_2.getSelectedItem();
+				String groupID=(String)comboBox_3.getSelectedItem();
+				String studentCount=spinner_2.getValue().toString();
+				String duration=textField_2.getText().toString();
+				
+				
+				
+			
+				
+				String sessionID=Lec1Name+"."+SubName+"."+tag+"."+groupID+"."+studentCount+"."+duration;
+				textField.setText(sessionID);
+				
+				
+				
+				
+				
 				try {
 					
 					
@@ -475,7 +494,11 @@ public class AddSessions {
 						JOptionPane.showMessageDialog(null, "Invalid Session Start Time And End Time");
 					}else if(spinner_1.getValue().equals(15)&& spinner_1_1.getValue().equals(14)){
 						JOptionPane.showMessageDialog(null, "Invalid Session Start Time And End Time");
+					}else if(!(sessionID.equals(textField.getText().toString()))){
+						JOptionPane.showMessageDialog(null, "Invalid Session ID please press generate button again");
 					}else {
+						
+					
 						
 						Connection connec = DBConnection.connect();
 						
@@ -506,14 +529,14 @@ public class AddSessions {
 							String subjectname=comboBox_1_1_1.getSelectedItem().toString();
 							String numberofstudents=spinner_2.getValue().toString();
 							//String duration=spinner.getValue().toString();
-							String duration=textField_2.getText().toString();
+							String tduration=textField_2.getText().toString();
 							String starttime=spinner_1.getValue().toString();
 							String endtime=spinner_1_1.getValue().toString();
 							//String date=comboBox_2_1.getSelectedItem().toString();
 							String sessionid=textField.getText();
 				               //String spinner=spinner;
 				               //String value =spinner.getValue().toString();
-				               
+							String sCode=textField_1.getText();
 							String msg = "" + subjectname;
 			                msg += " \n";
 			                
@@ -524,7 +547,7 @@ public class AddSessions {
 		                	Connection con = DBConnection.connect();
 
 		                    String query = "INSERT INTO Sessions values(null,'" + Lecturer1 + "','" + Lecturer2 + "','" + Tag + "','" +
-		                    		Group + "','" + numberofstudents + "','" + starttime + "','"+ endtime +"','"+ duration +"','"+ subjectname +"','"+ sessionid +"')";
+		                    		Group + "','" + numberofstudents + "','" + starttime + "','"+ endtime +"','"+ tduration +"','"+ subjectname +"','"+ sCode +"','"+ sessionid +"')";
 
 		                    java.sql.Statement sta = con.createStatement();
 		                    int xx = sta.executeUpdate(query);
@@ -558,6 +581,8 @@ public class AddSessions {
 		    				//comboBox_1_1.setSelectedItem(null);
 		    				comboBox_1_1_1.setSelectedItem(null);
 		    				textField.setText(null);
+		    				textField_2.setText(null);
+		    				textField_1.setText(null);
 		                    
 		                   
 		                
@@ -608,6 +633,8 @@ public class AddSessions {
 				//comboBox_1_1.setSelectedItem(null);
 				comboBox_1_1_1.setSelectedItem(null);
 				textField.setText(null);
+				textField_2.setText(null);
+				textField_1.setText(null);
 				//textField.setText(null);comboBox_2
 			
 			}
@@ -686,8 +713,6 @@ public class AddSessions {
 		comboBox_1_1_1.setBounds(688, 232, 225, 36);
 		panel_3.add(comboBox_1_1_1);
 		
-		 
-		
 		
 		JLabel lblNewLabel_11_1 = new JLabel("Session ID");
 		lblNewLabel_11_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -760,6 +785,33 @@ public class AddSessions {
 		textField_2.setBounds(688, 179, 225, 43);
 		panel_3.add(textField_2);
 		textField_2.setColumns(10);
+		
+		comboBox_1_1_1.addActionListener(new ActionListener() {
+			 	public void actionPerformed(ActionEvent arg0) {
+			 		
+			 		try {
+						String subject = comboBox_1_1_1.getSelectedItem().toString();
+						Connection con = DBConnection.connect();
+						String query = "select SubjectCode from SUbjects where SubjectName = '" + subject + "'";
+						PreparedStatement pst = con.prepareStatement(query);
+						ResultSet rs = pst.executeQuery();
+						//select SubjectCode from SUbjects where SubjectName='"+subname+"'
+						while (rs.next()) {
+
+							String name = rs.getString("SubjectCode");
+							textField_1.setText(name);
+							
+						}
+						con.close();
+					} catch (Exception e) {
+						
+					}
+			 	}
+			 });
+		
+		
+		
+		
 		
 		fillcombobox();
 		fillcombobox2();
