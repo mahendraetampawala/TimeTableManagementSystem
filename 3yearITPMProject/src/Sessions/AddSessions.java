@@ -773,7 +773,7 @@ public class AddSessions {
 		panel_3.add(lblNewLabel_11_2);
 		
 		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Times New Roman", Font.BOLD, 13));
+		textField_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		textField_1.setEditable(false);
 		textField_1.setColumns(10);
 		textField_1.setBounds(688, 283, 225, 36);
