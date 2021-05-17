@@ -673,7 +673,9 @@ public class ManageSessions {
 						JOptionPane.showMessageDialog(null, "Invalid Session Start Time And End Time");
 					}else if(spinner_2.getValue().equals(15)&& spinner_3.getValue().equals(14)){
 						JOptionPane.showMessageDialog(null, "Invalid Session Start Time And End Time");
-					}else{
+					}else if(!(sessionID.equals(textField.getText().toString()))){
+						JOptionPane.showMessageDialog(null, "Invalid Session ID! please press generate button again");
+					}else {
 					Connection con = DBConnection.connect();
 					
 					String query="Update Sessions set Lecturer1='"+comboBoxLec1.getSelectedItem()+"',Lecturer2='"+comboBox_1.getSelectedItem()+"',Tag='"+comboBox_2.getSelectedItem()+"',StudentGroup='"+comboBox_3.getSelectedItem()+"',NumberOfStudents='"+textField_1.getText()+"',Duration='"+textField_3.getText()+"',StartTime='"+spinner_2.getValue()+"' ,EndTime='"+spinner_3.getValue()+"' ,SubjectName='"+comboBoxLec1_3.getSelectedItem()+"',Date='"+textField_2.getText()+"' where SessionID='"+textField.getText()+"' ";//spinner_1
@@ -699,7 +701,7 @@ public class ManageSessions {
 		});
 		btnNewButton_16.setBackground(new Color(0, 255, 255));
 		btnNewButton_16.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		btnNewButton_16.setBounds(747, 77, 196, 39);
+		btnNewButton_16.setBounds(747, 66, 196, 39);
 		panel_5.add(btnNewButton_16);
 		
 		JButton btnNewButton_17 = new JButton("Delete");
@@ -738,7 +740,7 @@ public class ManageSessions {
 		});
 		btnNewButton_17.setBackground(new Color(0, 255, 255));
 		btnNewButton_17.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		btnNewButton_17.setBounds(747, 140, 196, 39);
+		btnNewButton_17.setBounds(747, 125, 196, 39);
 		panel_5.add(btnNewButton_17);
 		
 		JLabel lblNewLabel_2 = new JLabel("Select Lecturer 1");
@@ -866,6 +868,32 @@ public class ManageSessions {
 		textField_3.setBounds(490, 296, 142, 32);
 		panel_5.add(textField_3);
 		textField_3.setColumns(10);
+		
+		JButton btnNewButton_17_1 = new JButton("Generate SessionID");
+		btnNewButton_17_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+		 		String Lec1Name=(String)comboBoxLec1.getSelectedItem();
+				//String SubCode=(String)comboBox_1_1_1.getSelectedItem();
+				String SubName=(String)comboBoxLec1_3.getSelectedItem();
+				String tag=(String)comboBox_2.getSelectedItem();
+				String groupID=(String)comboBox_3.getSelectedItem();
+				String studentCount=textField_1.getText().toString();
+				String duration=textField_3.getText().toString();
+				
+				
+				
+			
+				
+				String sessionID=Lec1Name+"."+SubName+"."+tag+"."+groupID+"."+studentCount+"."+duration;
+				textField.setText(sessionID);
+				
+			}
+		});
+		btnNewButton_17_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		btnNewButton_17_1.setBackground(Color.CYAN);
+		btnNewButton_17_1.setBounds(725, 186, 218, 39);
+		panel_5.add(btnNewButton_17_1);
 		
 		comboBoxLec1_3.addActionListener(new ActionListener() {
 		 	public void actionPerformed(ActionEvent arg0) {

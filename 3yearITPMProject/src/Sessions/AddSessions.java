@@ -495,7 +495,7 @@ public class AddSessions {
 					}else if(spinner_1.getValue().equals(15)&& spinner_1_1.getValue().equals(14)){
 						JOptionPane.showMessageDialog(null, "Invalid Session Start Time And End Time");
 					}else if(!(sessionID.equals(textField.getText().toString()))){
-						JOptionPane.showMessageDialog(null, "Invalid Session ID please press generate button again");
+						JOptionPane.showMessageDialog(null, "Invalid Session ID! please press generate button again");
 					}else {
 						
 					
