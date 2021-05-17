@@ -153,6 +153,31 @@ public class AddSessions {
 		
 	}
 	
+	public void checksubjectcode() {
+		
+		String subname=comboBox_1_1_1.getSelectedItem().toString();
+
+		Connection conn = DBConnection.connect();
+		try{
+			String query="select SubjectCode from SUbjects where SubjectName='"+subname+"'";
+			pst=conn.prepareStatement(query);
+			rs=pst.executeQuery();
+			//table.setModel(DbUtils.resultSetToTableModel(rs));
+			while(rs.next()) {
+				//comboBoxLec1.addItem(rs.getString("LecturerName"));
+				//String name=rs.getString("SubjectName");
+				String scode=rs.getString("SubjectCode");
+				textField_1.setText(scode);
+			}
+			conn.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+	
+		
+		
+	}
 	
 	public AddSessions() {
 		initialize();
@@ -399,7 +424,7 @@ public class AddSessions {
 			public void actionPerformed(ActionEvent e) {
 				
 				
-				
+				calculateDuration();
 				
 				
 				try {
@@ -471,7 +496,7 @@ public class AddSessions {
 	                 //   JOptionPane.showMessageDialog(null, "This is alredy exist");
 	                //}
 					//else {
-							
+							calculateDuration();
 							
 							String Lecturer1=comboBoxLec1.getSelectedItem().toString();
 							String Lecturer2=comboBox_1.getSelectedItem().toString();
@@ -661,6 +686,9 @@ public class AddSessions {
 		comboBox_1_1_1.setBounds(688, 232, 225, 36);
 		panel_3.add(comboBox_1_1_1);
 		
+		 
+		
+		
 		JLabel lblNewLabel_11_1 = new JLabel("Session ID");
 		lblNewLabel_11_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		lblNewLabel_11_1.setBounds(535, 384, 142, 29);
@@ -673,7 +701,7 @@ public class AddSessions {
 		panel_3.add(textField);
 		textField.setColumns(10);
 		
-		JButton btnNewButton_13_1 = new JButton("Generate Session");
+		JButton btnNewButton_13_1 = new JButton("Generate Session ID");
 		btnNewButton_13_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -711,7 +739,7 @@ public class AddSessions {
 		});
 		btnNewButton_13_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_13_1.setBackground(Color.CYAN);
-		btnNewButton_13_1.setBounds(408, 465, 179, 54);
+		btnNewButton_13_1.setBounds(408, 465, 218, 54);
 		panel_3.add(btnNewButton_13_1);
 		
 		JLabel lblNewLabel_11_2 = new JLabel("Subject Code");
@@ -727,6 +755,7 @@ public class AddSessions {
 		panel_3.add(textField_1);
 		
 		textField_2 = new JTextField();
+		textField_2.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		textField_2.setEditable(false);
 		textField_2.setBounds(688, 179, 225, 43);
 		panel_3.add(textField_2);
@@ -736,6 +765,7 @@ public class AddSessions {
 		fillcombobox2();
 		fillcombobox3();
 		calculateDuration();
+		checksubjectcode();
 		//fillcombobox4();
 		
 	}
