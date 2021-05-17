@@ -49,6 +49,7 @@ public class ManageSessions {
 	/**
 	 * Launch the application.
 	 */
+	JSpinner spinner_2,spinner_3;
 	PreparedStatement pst=null;
 	ResultSet rs = null;
 	JComboBox comboBox;
@@ -158,7 +159,26 @@ public class ManageSessions {
 		}
 	}
 	
-	
+	//calculate duration 
+	public void calculateDuration() {
+		//int sTime=(int) spinner_1.getValue();
+		//int endTime=(int) spinner_1_1.getValue();
+		/**
+		 * String starttime=spinner_1.getValue().toString();
+		String endtime=spinner_1_1.getValue().toString();
+		
+		String duration=""+endtime+"-"+starttime+"";
+		textField_1.setText(duration);
+		 */
+		
+		int st=(int) spinner_2.getValue();
+		int et=(int)spinner_3.getValue();
+		
+		int duration=et-st;
+		String du = String.valueOf(duration);
+		textField_3.setText(du);
+		
+	}
 	public ManageSessions() {
 		initialize();
 	}
@@ -374,7 +394,7 @@ public class ManageSessions {
 		panel_3.add(panel_5);
 		panel_5.setLayout(null);
 		
-		JSpinner spinner_2 = new JSpinner();
+		 spinner_2 = new JSpinner();
 		spinner_2.setModel(new SpinnerNumberModel(8, 8, 15, 1));
 		spinner_2.setForeground(Color.BLACK);
 		spinner_2.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -382,7 +402,7 @@ public class ManageSessions {
 		spinner_2.setBounds(490, 341, 142, 32);
 		panel_5.add(spinner_2);
 		
-		JSpinner spinner_3 = new JSpinner();
+		 spinner_3 = new JSpinner();
 		spinner_3.setModel(new SpinnerNumberModel(10, 10, 17, 1));
 		spinner_3.setForeground(Color.BLACK);
 		spinner_3.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -588,7 +608,25 @@ public class ManageSessions {
 		btnNewButton_16.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-
+				calculateDuration();
+				
+				String Lec1Name=(String)comboBoxLec1.getSelectedItem();
+				//String SubCode=(String)comboBox_1_1_1.getSelectedItem();
+				String SubName=(String)comboBoxLec1_3.getSelectedItem();
+				String tag=(String)comboBox_2.getSelectedItem();
+				String groupID=(String)comboBox_3.getSelectedItem();
+				String studentCount=textField_1.getText().toString();
+				String duration=textField_3.getText().toString();
+				
+				
+				
+			
+				
+				String sessionID=Lec1Name+"."+SubName+"."+tag+"."+groupID+"."+studentCount+"."+duration;
+				textField.setText(sessionID);
+				
+				
+				
 				
 
 				try {
@@ -805,10 +843,10 @@ public class ManageSessions {
 		
 		textField = new JTextField();
 		textField.setEditable(false);
-		textField.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		textField.setFont(new Font("Times New Roman", Font.BOLD, 15));
 		textField.setColumns(10);
 		textField.setBackground(new Color(255, 255, 255));
-		textField.setBounds(775, 337, 168, 36);
+		textField.setBounds(642, 363, 301, 36);
 		panel_5.add(textField);
 		
 		JLabel lblNewLabel_11_2 = new JLabel("Subject Code");
