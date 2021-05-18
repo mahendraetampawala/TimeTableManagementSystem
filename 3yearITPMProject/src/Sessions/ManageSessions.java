@@ -78,6 +78,27 @@ public class ManageSessions {
 	/**
 	 * Create the application.
 	 */
+	public void viewTags() {
+		Connection conn = DBConnection.connect();
+		try{
+			String query="select * from Tags";
+			pst=conn.prepareStatement(query);
+			rs=pst.executeQuery();
+			//table.setModel(DbUtils.resultSetToTableModel(rs));
+			while(rs.next()) {
+				//comboBoxLec1.addItem(rs.getString("LecturerName"));
+				String name=rs.getString("TagName");
+				comboBox_2.addItem(name);
+			}
+			conn.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+	}
+	
+	
+	
 	
 	public void fillsubjectName() {
 		Connection conn = DBConnection.connect();
