@@ -60,6 +60,7 @@ public class ManageSessions {
 	private JTextField textField;
 	private JTextField textField_2;
 	private JTextField textField_3;
+	private JTextField textField_4;
 	public static void main(String[] args) {
 		DBConnection.connect();
 		EventQueue.invokeLater(new Runnable() {
@@ -161,15 +162,6 @@ public class ManageSessions {
 	
 	//calculate duration 
 	public void calculateDuration() {
-		//int sTime=(int) spinner_1.getValue();
-		//int endTime=(int) spinner_1_1.getValue();
-		/**
-		 * String starttime=spinner_1.getValue().toString();
-		String endtime=spinner_1_1.getValue().toString();
-		
-		String duration=""+endtime+"-"+starttime+"";
-		textField_1.setText(duration);
-		 */
 		
 		int st=(int) spinner_2.getValue();
 		int et=(int)spinner_3.getValue();
@@ -507,7 +499,7 @@ public class ManageSessions {
 				///////////
 			}
 		});
-		btnNewButton_13.setBounds(747, 10, 196, 39);
+		btnNewButton_13.setBounds(816, 10, 127, 39);
 		panel_5.add(btnNewButton_13);
 		btnNewButton_13.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_13.setBackground(new Color(0, 255, 255));
@@ -522,7 +514,7 @@ public class ManageSessions {
 		
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 61, 705, 174);
+		scrollPane.setBounds(10, 61, 796, 123);
 		panel_5.add(scrollPane);
 		
 		table = new JTable();
@@ -538,7 +530,7 @@ public class ManageSessions {
 				
 			
                 textField_1.setText(table.getValueAt(selectedRow,5).toString());
-                textField.setText(table.getValueAt(selectedRow,0).toString());
+                textField_4.setText(table.getValueAt(selectedRow,0).toString());
            
                 	
                 String lecturer1=table.getValueAt(selectedRow, 1).toString();
@@ -571,8 +563,8 @@ public class ManageSessions {
                 	textField_3.setText(duration);
                  	//spinner_1.setValue(table.getValueAt(selectedRow, 6).toString());
                 	//textField_3.setValue((Double)table.getValueAt(selectedRow, 8));	
-                 	spinner_2.setValue((Double)table.getValueAt(selectedRow, 6));
-                 	spinner_3.setValue((Double)table.getValueAt(selectedRow, 7));
+                 	spinner_2.setValue((int)table.getValueAt(selectedRow, 6));
+                 	spinner_3.setValue((int)table.getValueAt(selectedRow, 7));
                  	//spinner_3.setValue((Integer)table.getValueAt(selectedRow, 8));
                 //comboBoxFacultyName.setSelectedItem(table_1.getValueAt(selectedRow, 2).toString());
                  	String SID=table.getValueAt(selectedRow, 11).toString();
@@ -586,22 +578,14 @@ public class ManageSessions {
 		});
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null},
+				{},
+				{},
+				{},
+				{},
 			},
 			new String[] {
-				"ID", "Lecturer 1", "Lecturer 2", "Subject Code", "Subject Name", "Group ID", "Tag", "date"
 			}
-		) {
-			Class[] columnTypes = new Class[] {
-				Integer.class, String.class, String.class, Float.class, String.class, Float.class, String.class, Object.class
-			};
-			public Class getColumnClass(int columnIndex) {
-				return columnTypes[columnIndex];
-			}
-		});
+		));
 		scrollPane.setViewportView(table);
 		
 		JButton btnNewButton_16 = new JButton("Update");
@@ -678,7 +662,7 @@ public class ManageSessions {
 					}else {
 					Connection con = DBConnection.connect();
 					
-					String query="Update Sessions set Lecturer1='"+comboBoxLec1.getSelectedItem()+"',Lecturer2='"+comboBox_1.getSelectedItem()+"',Tag='"+comboBox_2.getSelectedItem()+"',StudentGroup='"+comboBox_3.getSelectedItem()+"',NumberOfStudents='"+textField_1.getText()+"',Duration='"+textField_3.getText()+"',StartTime='"+spinner_2.getValue()+"' ,EndTime='"+spinner_3.getValue()+"' ,SubjectName='"+comboBoxLec1_3.getSelectedItem()+"',Date='"+textField_2.getText()+"' where SessionID='"+textField.getText()+"' ";//spinner_1
+					String query="Update Sessions set Lecturer1='"+comboBoxLec1.getSelectedItem()+"',Lecturer2='"+comboBox_1.getSelectedItem()+"',Tag='"+comboBox_2.getSelectedItem()+"',StudentGroup='"+comboBox_3.getSelectedItem()+"',NumberOfStudents='"+textField_1.getText()+"',Duration='"+textField_3.getText()+"',StartTime='"+spinner_2.getValue()+"' ,EndTime='"+spinner_3.getValue()+"' ,SubjectName='"+comboBoxLec1_3.getSelectedItem()+"',SubjectCode='"+textField_2.getText()+"',SID='"+textField.getText()+"' where SessionID='"+textField_4.getText()+"' ";//spinner_1
 					PreparedStatement pst=con.prepareStatement(query);
 					pst.executeUpdate();
 					JOptionPane.showMessageDialog(null, "Data Updated");
@@ -701,7 +685,7 @@ public class ManageSessions {
 		});
 		btnNewButton_16.setBackground(new Color(0, 255, 255));
 		btnNewButton_16.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		btnNewButton_16.setBounds(747, 66, 196, 39);
+		btnNewButton_16.setBounds(816, 66, 127, 39);
 		panel_5.add(btnNewButton_16);
 		
 		JButton btnNewButton_17 = new JButton("Delete");
@@ -740,7 +724,7 @@ public class ManageSessions {
 		});
 		btnNewButton_17.setBackground(new Color(0, 255, 255));
 		btnNewButton_17.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		btnNewButton_17.setBounds(747, 125, 196, 39);
+		btnNewButton_17.setBounds(816, 125, 127, 39);
 		panel_5.add(btnNewButton_17);
 		
 		JLabel lblNewLabel_2 = new JLabel("Select Lecturer 1");
@@ -894,6 +878,19 @@ public class ManageSessions {
 		btnNewButton_17_1.setBackground(Color.CYAN);
 		btnNewButton_17_1.setBounds(725, 186, 218, 39);
 		panel_5.add(btnNewButton_17_1);
+		
+		JLabel lblNewLabel_2_1 = new JLabel("No");
+		lblNewLabel_2_1.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		lblNewLabel_2_1.setBounds(20, 194, 35, 36);
+		panel_5.add(lblNewLabel_2_1);
+		
+		textField_4 = new JTextField();
+		textField_4.setEditable(false);
+		textField_4.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		textField_4.setColumns(10);
+		textField_4.setBackground(Color.WHITE);
+		textField_4.setBounds(50, 194, 97, 36);
+		panel_5.add(textField_4);
 		
 		comboBoxLec1_3.addActionListener(new ActionListener() {
 		 	public void actionPerformed(ActionEvent arg0) {
