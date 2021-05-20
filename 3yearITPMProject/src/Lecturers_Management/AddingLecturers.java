@@ -6,7 +6,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
+import java.sql.Statement;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Color;
@@ -23,11 +23,12 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.beans.Statement;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.UIManager;
 import java.awt.SystemColor;
@@ -70,6 +71,7 @@ public class AddingLecturers {
 	
 	JCheckBox chckbxNewCheckBox,chckbxTuesday,chckbxWednesday,chckbxThursday,chckbxFriday,chckbxSaturday,chckbxSunday;
 	JSpinner spinner,spinner_2,spinner_1,spinner_1_3,spinner_1_1,spinner_1_1_1,spinner_1_2,spinner_1_2_1,spinner_3,spinner_2_1,spinner_1_4,spinner_1_3_1,spinner_1_1_2,spinner_1_1_1_1;
+	private JTextField textField;
 	public static void main(String[] args) {
 		DBConnection.connect();
 		EventQueue.invokeLater(new Runnable() {
@@ -95,6 +97,28 @@ public class AddingLecturers {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	public void getlecIDS() {
+		Connection conn = DBConnection.connect();
+		try{
+			String query="select * from Lecturers";
+			pst=conn.prepareStatement(query);
+			rs=pst.executeQuery();
+			//table.setModel(DbUtils.resultSetToTableModel(rs));
+			while(rs.next()) {
+				//comboBoxLec1.addItem(rs.getString("LecturerName"));
+				String name=rs.getString("Emp_ID");
+				//comboBox_2.addItem(name);
+				
+			}
+			conn.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		
+	}
+	
+	
 	public void setID() {
 		
         try{
@@ -532,7 +556,7 @@ public class AddingLecturers {
 		btnNewButton_15.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
+			
 				
 				
 				String autofill;
@@ -613,8 +637,8 @@ public class AddingLecturers {
 					
 					
 					
-				}
-					else {
+				
+				}else {
 						Connection connec = DBConnection.connect();
 					
 						/*String checkID= "select Emp_ID from Lecturers";
@@ -657,26 +681,14 @@ public class AddingLecturers {
 		                	Connection con = DBConnection.connect();
 
 		                    String query = "INSERT INTO Lecturers values('" + ID + "','" + Name + "','" + faculty + "','" +
-		                    		center + "','" + Department + "','" + building + "','"+ level +"','"+ rank +"',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)";
+		                    		center + "','" + Department + "','" + building + "','"+ level +"','"+ rank +"',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,null)";
 
-		                    java.sql.Statement sta = con.createStatement();
+		                    Statement sta = con.createStatement();
 		                    int xx = sta.executeUpdate(query);
-		                    /*if (xx == 0) {
-		                        JOptionPane.showMessageDialog(null, "This is alredy exist");
-		                    } else {
-		                        JOptionPane.showMessageDialog(null,
-		                            "Welcome, " + msg + "Your account is sucessfully created");
-		                    }
-		                    String checkID= "select Emp_ID from Lecturers";
-							PreparedStatement pstID = conn.prepareStatement(checkID);
-							rs=pstID.executeQuery();
-							while(rs.next()) {
-								String id = rs.getString("Emp_ID");
-								if(LecturerID.getText().equals(id))
-								JOptionPane.showMessageDialog(null, "This is alredy exist");
-								
-							}*/
-							
+		                    
+		                    if (xx == 0) {
+		                    	JOptionPane.showMessageDialog(btnNewButton, "This is alredy exist");
+							} else {
 		                    
 		                    
 		                    
@@ -698,7 +710,7 @@ public class AddingLecturers {
 		                    
 		                   
 		                
-							
+							}
 							
 							
 							
@@ -852,6 +864,11 @@ public class AddingLecturers {
 		lblNewLabel_9.setIcon(new ImageIcon(photo2));
 		lblNewLabel_9.setBounds(694, 0, 351, 529);
 		panel_3.add(lblNewLabel_9);
+		
+		textField = new JTextField();
+		textField.setBounds(591, 423, 41, 19);
+		panel_3.add(textField);
+		textField.setColumns(10);
 		
 		
 	}
