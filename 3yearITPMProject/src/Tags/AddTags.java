@@ -378,7 +378,7 @@ private JFrame frame;
 
 		                	Connection con = DBConnection.connect();
 
-		                    String query = "INSERT INTO Tags values(null, '" + Name + "','" + tagcode + "','" + relatedtag + "')";
+		                    String query = "INSERT INTO Tag values('" + Name + "','" + tagcode + "','" + relatedtag + "')";
 
 		                    java.sql.Statement sta = con.createStatement();
 		                    int xx = sta.executeUpdate(query);
