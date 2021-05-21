@@ -201,7 +201,7 @@ public void refreshtable() {
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(253, 171, 1083, 501);
 		panel_3.setLayout(null);
-		panel_3.setBackground(new Color(230, 230, 250));
+		panel_3.setBackground(new Color(204, 255, 102));
 		frame.getContentPane().add(panel_3);
 
 
@@ -210,8 +210,8 @@ public void refreshtable() {
 		JPanel panel_4 = new JPanel();
 		panel_4.setLayout(null);
 		panel_4.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_4.setBackground(SystemColor.menu);
-		panel_4.setBounds(10, 10, 1063, 315);
+		panel_4.setBackground(new Color(204, 255, 102));
+		panel_4.setBounds(0, 0, 1083, 282);
 		panel_3.add(panel_4);
 
 		
@@ -223,49 +223,50 @@ public void refreshtable() {
 		
 		//select room
 		JLabel lblSelectGroup = new JLabel("Select Room");
-		lblSelectGroup.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblSelectGroup.setBounds(108, 43, 91, 23);
+		lblSelectGroup.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblSelectGroup.setBounds(108, 43, 103, 31);
 		panel_4.add(lblSelectGroup);
 		
 		selectroom = new JComboBox();
-		selectroom.setBounds(279, 42, 149, 22);
+		selectroom.setBounds(279, 42, 196, 31);
 		selectroom.setModel(new DefaultComboBoxModel(new String[] {""}));
+		selectroom.setBackground(new Color(255, 255, 0));
 		panel_4.add(selectroom);
 		fillRoom();
 		
 		//add date
 		JLabel lblSelectSubGroup = new JLabel("Select Date");
-		lblSelectSubGroup.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblSelectSubGroup.setFont(new Font("Times New Roman", Font.BOLD, 19));
 		lblSelectSubGroup.setBounds(108, 93, 113, 23);
 		panel_4.add(lblSelectSubGroup);
 		
 		date = new JTextField();
 		date.setColumns(10);
-		date.setBounds(279, 94, 149, 23);
+		date.setBounds(279, 90, 196, 31);
 		panel_4.add(date);
 		
 		
 		//start Time
 		start = new JTextField();
-		start.setBounds(279, 183, 86, 20);
+		start.setBounds(756, 43, 103, 31);
 		panel_4.add(start);
 		start.setColumns(10);
 		
 		JLabel lblStartTime = new JLabel("Start Time");
-		lblStartTime.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblStartTime.setBounds(108, 181, 91, 23);
+		lblStartTime.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		lblStartTime.setBounds(585, 45, 91, 23);
 		panel_4.add(lblStartTime);
 		
 		
 		//End time
 		end = new JTextField();
 		end.setColumns(10);
-		end.setBounds(279, 239, 86, 20);
+		end.setBounds(756, 90, 103, 31);
 		panel_4.add(end);
 		
 		JLabel lblEndTime = new JLabel("End Time");
-		lblEndTime.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblEndTime.setBounds(108, 237, 57, 23);
+		lblEndTime.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		lblEndTime.setBounds(585, 88, 91, 31);
 		panel_4.add(lblEndTime);
 		
 
@@ -322,12 +323,12 @@ public void refreshtable() {
 
 			}
 		});
-		add.setBounds(671, 57, 141, 31);
+		add.setBounds(535, 211, 141, 31);
 		panel_4.add(add);
-		add.setForeground(Color.WHITE);
-		add.setFont(new Font("Tahoma", Font.BOLD, 14));
+		add.setForeground(Color.BLACK);
+		add.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		add.setEnabled(true);
-		add.setBackground(new Color(0, 153, 153));
+		add.setBackground(Color.CYAN);
 		
 		
 		//clear all fields
@@ -346,34 +347,35 @@ public void refreshtable() {
 			
 			}
 		});
-		btnClear.setBounds(671, 130, 141, 31);
+		btnClear.setBounds(744, 211, 141, 31);
 		panel_4.add(btnClear);
-		btnClear.setForeground(Color.WHITE);
-		btnClear.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnClear.setForeground(Color.BLACK);
+		btnClear.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnClear.setEnabled(true);
-		btnClear.setBackground(new Color(0, 153, 153));
+		btnClear.setBackground(Color.CYAN);
 		
 
 		starttime = new JSpinner();
 		String[] ampmString = {"am", "pm"};
 		starttime = new JSpinner( new SpinnerListModel(ampmString));
-		starttime.setBounds(384, 183, 44, 20);
+		starttime.setBounds(880, 43, 72, 31);
 		panel_4.add(starttime);
 		
 		endtime = new JSpinner();
 		String[] ampmString1 = {"am", "pm"};
 		endtime = new JSpinner( new SpinnerListModel(ampmString1));
-		endtime.setBounds(384, 239, 44, 20);
+		endtime.setBounds(886, 90, 66, 31);
 		panel_4.add(endtime);
 		
 		JLabel lblNewLabel = new JLabel("Session Signature");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNewLabel.setBounds(108, 140, 113, 14);
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		lblNewLabel.setBounds(108, 140, 161, 31);
 		panel_4.add(lblNewLabel);
 		
 		sessionsign = new JComboBox();
 		sessionsign.setModel(new DefaultComboBoxModel(new String[] {""}));
-		sessionsign.setBounds(279, 137, 149, 20);
+		sessionsign.setBounds(279, 137, 196, 31);
+		sessionsign.setBackground(new Color(255, 255, 0));
 		panel_4.add(sessionsign);
 		fillsign() ;
 		
@@ -406,10 +408,10 @@ public void refreshtable() {
 				
 			}
 		});
-		Update.setForeground(Color.WHITE);
-		Update.setFont(new Font("Tahoma", Font.BOLD, 14));
+		Update.setForeground(Color.BLACK);
+		Update.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		Update.setEnabled(true);
-		Update.setBackground(new Color(0, 153, 153));
+		Update.setBackground(Color.CYAN);
 		Update.setBounds(10, 466, 141, 31);
 		panel_3.add(Update);
 	
@@ -445,15 +447,15 @@ public void refreshtable() {
 				
 			}
 		});
-		delete.setForeground(Color.WHITE);
-		delete.setFont(new Font("Tahoma", Font.BOLD, 14));
+		delete.setForeground(Color.BLACK);
+		delete.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		delete.setEnabled(true);
-		delete.setBackground(new Color(0, 153, 153));
+		delete.setBackground(Color.CYAN);
 		delete.setBounds(932, 460, 141, 31);
 		panel_3.add(delete);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 334, 1063, 111);
+		scrollPane.setBounds(10, 292, 1063, 153);
 		panel_3.add(scrollPane);
 		
 		table = new JTable();

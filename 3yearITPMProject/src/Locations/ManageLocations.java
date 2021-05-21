@@ -151,23 +151,23 @@ public class ManageLocations {
 		lpanel_3.setLayout(null);
 		
 		JLabel loclblNewLabel = new JLabel("Building Name");
-		loclblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		loclblNewLabel.setBounds(41, 83, 85, 16);
+		loclblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		loclblNewLabel.setBounds(29, 83, 157, 26);
 		lpanel_3.add(loclblNewLabel);
 		
 		JLabel loclblNewLabel_2 = new JLabel("Room Name");
-		loclblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		loclblNewLabel_2.setBounds(41, 136, 74, 16);
+		loclblNewLabel_2.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		loclblNewLabel_2.setBounds(29, 133, 126, 35);
 		lpanel_3.add(loclblNewLabel_2);
 		
 		JLabel loclblNewLabel_3 = new JLabel("Room Type");
-		loclblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		loclblNewLabel_3.setBounds(41, 197, 85, 16);
+		loclblNewLabel_3.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		loclblNewLabel_3.setBounds(29, 199, 126, 26);
 		lpanel_3.add(loclblNewLabel_3);
 		
 		JLabel loclblNewLabel_4 = new JLabel("Capacity");
-		loclblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		loclblNewLabel_4.setBounds(41, 259, 59, 13);
+		loclblNewLabel_4.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		loclblNewLabel_4.setBounds(29, 250, 126, 42);
 		lpanel_3.add(loclblNewLabel_4);
 	//insert location	
 		JButton lbtnAddButton = new JButton("ADD");
@@ -210,10 +210,10 @@ public class ManageLocations {
 			
 			}
 		});
-		lbtnAddButton.setForeground(new Color(255, 255, 255)); 
-		lbtnAddButton.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lbtnAddButton.setBackground(new Color(0, 139, 139));
-		lbtnAddButton.setBounds(41, 322, 105, 31);
+		lbtnAddButton.setForeground(Color.BLACK); 
+		lbtnAddButton.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lbtnAddButton.setBackground(Color.CYAN);
+		lbtnAddButton.setBounds(23, 391, 144, 42);
 		lpanel_3.add(lbtnAddButton);
 		
 		//update location
@@ -244,10 +244,10 @@ public class ManageLocations {
 				}
 			}
 		});
-		lbtnEditButton_1.setForeground(new Color(255, 255, 255));
-		lbtnEditButton_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lbtnEditButton_1.setBackground(new Color(0, 139, 139));
-		lbtnEditButton_1.setBounds(195, 322, 105, 31);
+		lbtnEditButton_1.setForeground(Color.BLACK);
+		lbtnEditButton_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lbtnEditButton_1.setBackground(Color.CYAN);
+		lbtnEditButton_1.setBounds(361, 391, 127, 42);
 		lpanel_3.add(lbtnEditButton_1);
 		
 		//delete
@@ -279,10 +279,10 @@ public class ManageLocations {
 				
 			}
 		});
-		lbtnDelButton_2.setForeground(new Color(255, 255, 255));
-		lbtnDelButton_2.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lbtnDelButton_2.setBackground(new Color(0, 139, 139));
-		lbtnDelButton_2.setBounds(41, 382, 105, 31);
+		lbtnDelButton_2.setForeground(Color.BLACK);
+		lbtnDelButton_2.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lbtnDelButton_2.setBackground(Color.CYAN);
+		lbtnDelButton_2.setBounds(190, 391, 144, 42);
 		lpanel_3.add(lbtnDelButton_2);
 		
 		//clear
@@ -297,26 +297,29 @@ public class ManageLocations {
 				
 			}
 		});
-		lbtnclrButton_3.setForeground(new Color(255, 255, 255));
-		lbtnclrButton_3.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lbtnclrButton_3.setBackground(new Color(0, 139, 139));
-		lbtnclrButton_3.setBounds(195, 382, 105, 31);
+		lbtnclrButton_3.setForeground(Color.BLACK);
+		lbtnclrButton_3.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lbtnclrButton_3.setBackground(Color.CYAN);
+		lbtnclrButton_3.setBounds(509, 391, 127, 42);
 		lpanel_3.add(lbtnclrButton_3);
 		
 
 		locationId = new JTextField();
+		locationId.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		locationId.setEnabled(false);
-		locationId.setBounds(139, 42, 161, 23);
+		locationId.setBounds(222, 27, 197, 36);
 		lpanel_3.add(locationId);
 		locationId.setColumns(10);
 		
 		rName = new JTextField();
-		rName.setBounds(139, 134, 161, 23);
+		rName.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		rName.setBounds(222, 135, 197, 36);
 		lpanel_3.add(rName);
 		rName.setColumns(10);
 		
 		bName = new JTextField();
-		bName.setBounds(139, 81, 161, 23);
+		bName.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		bName.setBounds(222, 81, 197, 36);
 		lpanel_3.add(bName);
 		bName.setColumns(10);
 		
@@ -326,6 +329,7 @@ public class ManageLocations {
 		lpanel_3.add(show_validation);
 		
 		capacity = new JTextField();
+		capacity.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		capacity.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -338,13 +342,15 @@ public class ManageLocations {
 			}
 			
 		});
-		capacity.setBounds(139, 255, 161, 23);
+		capacity.setBounds(222, 256, 197, 36);
 		lpanel_3.add(capacity);
 		capacity.setColumns(10);
 		
 		type = new JComboBox();
+		type.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		type.setModel(new DefaultComboBoxModel(new String[] {"Lecture Hall", "Laboratory"}));
-		type.setBounds(139, 195, 161, 23);
+		type.setBounds(222, 196, 197, 36);
+		type.setBackground(new Color(255, 255, 0));
 		lpanel_3.add(type);
 		lpanel_3.add(type);
 		//retrive table
@@ -363,9 +369,9 @@ public class ManageLocations {
 		
 		//search
 		JComboBox searchcomboBox = new JComboBox();
-		searchcomboBox.setForeground(new Color(255, 255, 255));
-		searchcomboBox.setFont(new Font("Tahoma", Font.BOLD, 12));
-		searchcomboBox.setBackground(new Color(119, 136, 153));
+		searchcomboBox.setForeground(Color.BLACK);
+		searchcomboBox.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		searchcomboBox.setBackground(new Color(255, 255, 0));
 		searchcomboBox.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -388,11 +394,11 @@ public class ManageLocations {
 			
 		});
 		searchcomboBox.setModel(new DefaultComboBoxModel(new String[] {"Faculty of Computing", "Faculty of Engineering", "Faculty of Business", "New Building"}));
-		searchcomboBox.setBounds(363, 10, 206, 42);
+		searchcomboBox.setBounds(579, 10, 260, 42);
 		lpanel_3.add(searchcomboBox);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(579, 10, 494, 251);
+		scrollPane.setBounds(579, 80, 494, 251);
 		lpanel_3.add(scrollPane);
 		
 		table_2 = new JTable();
@@ -437,8 +443,8 @@ public class ManageLocations {
 	
 		
 		JLabel lblNewLabel = new JLabel("Location ID");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNewLabel.setBounds(41, 42, 74, 13);
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 19));
+		lblNewLabel.setBounds(29, 29, 105, 26);
 		lpanel_3.add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("REFRESH");
@@ -447,10 +453,10 @@ public class ManageLocations {
 				refreshTable();
 			}
 		});
-		btnNewButton.setForeground(new Color(255, 255, 255));
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton.setBackground(new Color(0, 139, 139));
-		btnNewButton.setBounds(464, 228, 105, 31);
+		btnNewButton.setForeground(Color.BLACK);
+		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		btnNewButton.setBackground(Color.CYAN);
+		btnNewButton.setBounds(442, 289, 127, 42);
 		
 		lpanel_3.add(btnNewButton);
 		

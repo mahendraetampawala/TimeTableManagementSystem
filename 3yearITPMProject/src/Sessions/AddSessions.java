@@ -684,14 +684,14 @@ public class AddSessions {
 		 comboBox_2 = new JComboBox();
 		 comboBox_2.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		 comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Tutorials", "Labs", "Lecturers"}));
-		 comboBox_2.setBackground(new Color(255, 255, 255));
+		 comboBox_2.setBackground(new Color(255, 255, 0));
 		comboBox_2.setBounds(289, 181, 225, 36);
 		panel_3.add(comboBox_2);
 		
 		 comboBox_3 = new JComboBox();
 		 comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"12.1", "12.2", "13.1", "13.2", "14.1", "14.2"}));
 		 comboBox_3.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		 comboBox_3.setBackground(new Color(255, 255, 255));
+		 comboBox_3.setBackground(new Color(255, 255, 0));
 		comboBox_3.setBounds(289, 227, 225, 36);
 		panel_3.add(comboBox_3);
 		
@@ -734,7 +734,7 @@ public class AddSessions {
 		
 		 comboBox_1_1_1 = new JComboBox();
 		comboBox_1_1_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		comboBox_1_1_1.setBackground(new Color(255, 255, 255));
+		comboBox_1_1_1.setBackground(new Color(255, 255, 0));
 		comboBox_1_1_1.setBounds(688, 232, 225, 36);
 		panel_3.add(comboBox_1_1_1);
 		

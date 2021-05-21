@@ -534,7 +534,7 @@ public class ManageSessions {
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Tutorials", "Labs", "Lecturers"}));
 		comboBox.setBounds(341, 12, 339, 39);
 		panel_5.add(comboBox);
-		comboBox.setBackground(new Color(255, 255, 255));
+		comboBox.setBackground(new Color(255, 255, 0));
 		
 		
 		
@@ -759,7 +759,7 @@ public class ManageSessions {
 		
 		 comboBoxLec1 = new JComboBox();
 		 comboBoxLec1.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		 comboBoxLec1.setBackground(new Color(255, 255, 255));
+		 comboBoxLec1.setBackground(new Color(255, 255, 0));
 		comboBoxLec1.setBounds(172, 245, 168, 36);
 		panel_5.add(comboBoxLec1);
 		
@@ -771,7 +771,7 @@ public class ManageSessions {
 		 comboBox_1 = new JComboBox();
 		 comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Non"}));
 		 comboBox_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		 comboBox_1.setBackground(new Color(255, 255, 255));
+		 comboBox_1.setBackground(new Color(255, 255, 0));
 		comboBox_1.setBounds(172, 291, 168, 36);
 		panel_5.add(comboBox_1);
 		
@@ -783,7 +783,7 @@ public class ManageSessions {
 		 comboBox_2 = new JComboBox();
 		 comboBox_2.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		 comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Tutorials", "Labs", "Lecturers"}));
-		 comboBox_2.setBackground(new Color(255, 255, 255));
+		 comboBox_2.setBackground(new Color(255, 255, 0));
 		comboBox_2.setBounds(172, 337, 168, 36);
 		panel_5.add(comboBox_2);
 		
@@ -795,7 +795,7 @@ public class ManageSessions {
 		 comboBox_3 = new JComboBox();
 		 comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"12.1", "12.2", "13.1", "13.2", "14.1", "14.2"}));
 		 comboBox_3.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		 comboBox_3.setBackground(new Color(255, 255, 255));
+		 comboBox_3.setBackground(new Color(255, 255, 0));
 		comboBox_3.setBounds(172, 385, 168, 36);
 		panel_5.add(comboBox_3);
 		
