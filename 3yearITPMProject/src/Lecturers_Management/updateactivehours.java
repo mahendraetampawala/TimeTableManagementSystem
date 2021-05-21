@@ -74,6 +74,7 @@ public class updateactivehours {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setUndecorated(true);
+		frame.setTitle("Time Table Management System");
 		frame.getContentPane().setBackground(new Color(51, 0, 0));
 		
 		JPanel panel_3 = new JPanel();

@@ -124,8 +124,8 @@ public class ManageLocations {
 	 */
 	private void initialize() {
 		frmMangeLocationsGroup = new JFrame();
-		frmMangeLocationsGroup.getContentPane().setBackground(SystemColor.inactiveCaptionBorder);
-		frmMangeLocationsGroup.setBackground(Color.YELLOW);
+		
+		frmMangeLocationsGroup.setBackground(new Color(51, 0, 0));
 		frmMangeLocationsGroup.setResizable(false);
 		frmMangeLocationsGroup.setTitle("Time Table Management System");
 		frmMangeLocationsGroup.setSize(1350, 728);
@@ -138,14 +138,15 @@ public class ManageLocations {
 		frmMangeLocationsGroup.getContentPane().setLayout(null);
 		
 		JPanel lpanel_2 = new JPanel();
-		lpanel_2.setBounds(253, 170, 967, 502);
+		lpanel_2.setBounds(253, 170, 1083, 502);
 		lpanel_2.setBackground(new Color(230, 230, 250));
 		frmMangeLocationsGroup.getContentPane().add(lpanel_2);
 		lpanel_2.setLayout(null);
 		
 		
 		JPanel lpanel_3 = new JPanel();
-		lpanel_3.setBounds(25, 24, 882, 448);
+		lpanel_3.setBounds(0, 0, 1083, 502);
+		lpanel_3.setBackground(new Color(204, 255, 102));
 		lpanel_2.add(lpanel_3);
 		lpanel_3.setLayout(null);
 		
@@ -387,11 +388,11 @@ public class ManageLocations {
 			
 		});
 		searchcomboBox.setModel(new DefaultComboBoxModel(new String[] {"Faculty of Computing", "Faculty of Engineering", "Faculty of Business", "New Building"}));
-		searchcomboBox.setBounds(680, 42, 161, 31);
+		searchcomboBox.setBounds(363, 10, 206, 42);
 		lpanel_3.add(searchcomboBox);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(347, 102, 494, 251);
+		scrollPane.setBounds(579, 10, 494, 251);
 		lpanel_3.add(scrollPane);
 		
 		table_2 = new JTable();
@@ -449,7 +450,7 @@ public class ManageLocations {
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnNewButton.setBackground(new Color(0, 139, 139));
-		btnNewButton.setBounds(730, 382, 105, 31);
+		btnNewButton.setBounds(464, 228, 105, 31);
 		
 		lpanel_3.add(btnNewButton);
 		

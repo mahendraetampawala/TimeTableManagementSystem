@@ -121,6 +121,7 @@ public class Addactivedayshoursforlecturers {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setUndecorated(true);
+		frame.setTitle("Time Table Management System");
 		Instruct();
 		
 		JPanel panel_3 = new JPanel();

@@ -175,6 +175,7 @@ public class AddingLecturers {
 		frame.setBounds(30, 30, 1320, 750);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setTitle("Time Table Management System");
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);

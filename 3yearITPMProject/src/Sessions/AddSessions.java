@@ -216,6 +216,7 @@ public class AddSessions {
 		frame.setBounds(30, 30, 1250, 750);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setTitle("Time Table Management System");
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(null);

@@ -125,6 +125,7 @@ public class AddStudentGroups {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setBackground(new Color(51,0,0));
 		frame.getContentPane().setLayout(null);
+		frame.setTitle("Time Table Management System");
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);

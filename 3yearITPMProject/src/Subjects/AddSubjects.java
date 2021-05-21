@@ -83,6 +83,7 @@ public class AddSubjects {
 		frame.getContentPane().setBackground(new Color(51, 0, 0));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setTitle("Time Table Management System");
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
