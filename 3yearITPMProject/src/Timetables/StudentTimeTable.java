@@ -307,8 +307,9 @@ public class StudentTimeTable {
 		JButton btnNewButton_11 = new JButton("Lecturer Time Table");
 		btnNewButton_11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
-				new LecturerTimeTable();
+				LecturerTimeTable addsubjects=new LecturerTimeTable();
+				addsubjects.main(null);
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton_11.setForeground(Color.BLACK);
@@ -320,8 +321,9 @@ public class StudentTimeTable {
 		JButton btnNewButton_12_1 = new JButton("Student Time Table");
 		btnNewButton_12_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
-				new StudentTimeTable();
+				StudentTimeTable addsubjects=new StudentTimeTable();
+				addsubjects.main(null);
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton_12_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -331,8 +333,9 @@ public class StudentTimeTable {
 		JButton btnNewButton_12 = new JButton("Location Time Table");
 		btnNewButton_12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
-				new LocationTimeTable();
+				LocationTimeTable addsubjects=new LocationTimeTable();
+				addsubjects.main(null);
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton_12.setFont(new Font("Times New Roman", Font.BOLD, 20));

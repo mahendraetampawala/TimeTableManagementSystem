@@ -412,6 +412,13 @@ public class AddConsecutiveSession {
 		panel_2.add(btnNewButton_2_1_2);
 		
 		JButton btnNewButton_2_1_3 = new JButton("Not Available Times");
+		btnNewButton_2_1_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				NotAvailableTime NotAvailableTime=new NotAvailableTime();
+				NotAvailableTime.main(null);
+				frame.setVisible(false);
+			}
+		});
 		btnNewButton_2_1_3.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_2_1_3.setBounds(733, 11, 230, 55);
 		panel_2.add(btnNewButton_2_1_3);

@@ -971,17 +971,18 @@ public void refreshtable() {
 			
 			public void actionPerformed(ActionEvent e) {
 			
-				frame.dispose();
-				new NotAvailableTime();
+				NotAvailableTime NotAvailableTime=new NotAvailableTime();
+				NotAvailableTime.main(null);
+				frame.setVisible(false);
 				
 			}
 		});
 		btnNewButton_2_1_2.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-		
-				frame.dispose();
-				new AddNotOverlapSession();
+				AddNotOverlapSession addnotoverlapsession=new AddNotOverlapSession();
+				addnotoverlapsession.main(null);
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton_2_1_1.addActionListener(new ActionListener() {
@@ -995,8 +996,9 @@ public void refreshtable() {
 		btnNewButton_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				frame.dispose();
-				new AddConsecutiveSession();
+				AddParallelSession addparallelsession=new AddParallelSession();
+				addparallelsession.main(null);
+				frame.setVisible(false);
 				
 			}
 		});

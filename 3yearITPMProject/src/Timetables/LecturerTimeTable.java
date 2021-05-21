@@ -363,8 +363,9 @@ public class LecturerTimeTable {
 		JButton btnNewButton = new JButton("Home");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmAddStudentGroup_1.dispose();
-				new welcome();
+				welcome welcome=new welcome();
+				welcome.main(null);
+				frmAddStudentGroup_1.setVisible(false);
 			}
 		});
 		btnNewButton.setForeground(Color.BLACK);
@@ -376,8 +377,9 @@ public class LecturerTimeTable {
 		JButton btnNewButton_1 = new JButton("Lecturers");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmAddStudentGroup_1.dispose();
-				new AddingLecturers();
+				AddingLecturers addinglectures=new AddingLecturers();
+				addinglectures.main(null);
+				frmAddStudentGroup_1.setVisible(false);
 			}
 		});
 		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -388,8 +390,9 @@ public class LecturerTimeTable {
 		JButton btnNewButton_2_1 = new JButton("Student Groups");
 		btnNewButton_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmAddStudentGroup_1.dispose();
-				new AddStudentGroups();
+				AddStudentGroups student=new AddStudentGroups();
+				student.main(null);
+				frmAddStudentGroup_1.setVisible(false);
 			}
 		});
 		btnNewButton_2_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -400,8 +403,10 @@ public class LecturerTimeTable {
 		JButton btnNewButton_3_1 = new JButton("Subjects");
 		btnNewButton_3_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmAddStudentGroup_1.dispose();
-				new AddSubjects();
+
+				AddSubjects addsubjects=new AddSubjects();
+				addsubjects.main(null);
+				frmAddStudentGroup_1.setVisible(false);
 			}
 		});
 		btnNewButton_3_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -412,8 +417,9 @@ public class LecturerTimeTable {
 		JButton btnNewButton_4 = new JButton("Working days/Hours");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmAddStudentGroup_1.dispose();
-				new AddWorkingDays();
+				AddWorkingDays workingdays=new AddWorkingDays();
+				workingdays.main(null);
+				frmAddStudentGroup_1.setVisible(false);
 			}
 		});
 		btnNewButton_4.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -424,8 +430,9 @@ public class LecturerTimeTable {
 		JButton btnNewButton_5 = new JButton("Sessions");
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmAddStudentGroup_1.dispose();
-				new AddSessions();
+				AddSessions addsessions=new AddSessions();
+				addsessions.main(null);
+				frmAddStudentGroup_1.setVisible(false);
 			}
 		});
 		btnNewButton_5.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -436,8 +443,10 @@ public class LecturerTimeTable {
 		JButton btnNewButton_6 = new JButton("Locations");
 		btnNewButton_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmAddStudentGroup_1.dispose();
-				new AddLocations();
+				
+				AddLocations addlocations=new AddLocations();
+				addlocations.main(null);
+				frmAddStudentGroup_1.setVisible(false);
 			}
 		});
 		btnNewButton_6.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -448,8 +457,9 @@ public class LecturerTimeTable {
 		JButton btnNewButton_7 = new JButton("Tags");
 		btnNewButton_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmAddStudentGroup_1.dispose();
-				new AddTags();
+				AddTags addtags=new AddTags();
+				addtags.main(null);
+				frmAddStudentGroup_1.setVisible(false);
 			}
 		});
 		btnNewButton_7.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -460,8 +470,9 @@ public class LecturerTimeTable {
 		JButton btnNewButton_8_1 = new JButton("Session Types");
 		btnNewButton_8_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmAddStudentGroup_1.dispose();
-				new AddConsecutiveSession();
+				AddConsecutiveSession AddConsecutiveSession=new AddConsecutiveSession();
+				AddConsecutiveSession.main(null);
+				frmAddStudentGroup_1.setVisible(false);
 			}
 		});
 		btnNewButton_8_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -472,8 +483,10 @@ public class LecturerTimeTable {
 		JButton btnNewButton_8 = new JButton("Session Rooms");
 		btnNewButton_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmAddStudentGroup_1.dispose();
-				new ManageSessionsRooms();
+
+				ManageSessionsRooms ssr=new ManageSessionsRooms();
+				ssr.main(null);
+				frmAddStudentGroup_1.setVisible(false);
 			}
 		});
 		btnNewButton_8.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -484,8 +497,10 @@ public class LecturerTimeTable {
 		JButton btnNewButton_9 = new JButton("Generate Timetables");
 		btnNewButton_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmAddStudentGroup_1.dispose();
-				new LecturerTimeTable();
+
+				LecturerTimeTable tt=new LecturerTimeTable();
+				tt.main(null);
+				frmAddStudentGroup_1.setVisible(false);
 			}
 		});
 		btnNewButton_9.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -496,8 +511,9 @@ public class LecturerTimeTable {
 		JButton btnNewButton_10_1 = new JButton("Statistics");
 		btnNewButton_10_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmAddStudentGroup_1.dispose();
-				new StatisticsGraph();
+				StatisticsGraph statistics=new StatisticsGraph();
+				statistics.main(null);
+				frmAddStudentGroup_1.setVisible(false);
 			}
 		});
 		btnNewButton_10_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -514,8 +530,9 @@ public class LecturerTimeTable {
 		JButton btnNewButton_11 = new JButton("Lecturer Time Table");
 		btnNewButton_11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmAddStudentGroup_1.dispose();
-				new LecturerTimeTable();
+				LecturerTimeTable addsubjects=new LecturerTimeTable();
+				addsubjects.main(null);
+				frmAddStudentGroup_1.setVisible(false);
 			}
 		});
 		btnNewButton_11.setForeground(Color.BLACK);
@@ -527,8 +544,9 @@ public class LecturerTimeTable {
 		JButton btnNewButton_12 = new JButton("Location Time Table");
 		btnNewButton_12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmAddStudentGroup_1.dispose();
-				new LocationTimeTable();
+				LocationTimeTable addsubjects=new LocationTimeTable();
+				addsubjects.main(null);
+				frmAddStudentGroup_1.setVisible(false);
 			}
 		});
 		btnNewButton_12.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -538,8 +556,9 @@ public class LecturerTimeTable {
 		JButton btnNewButton_12_1 = new JButton("Student Time Table");
 		btnNewButton_12_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frmAddStudentGroup_1.dispose();
-				new StudentTimeTable();
+				StudentTimeTable addsubjects=new StudentTimeTable();
+				addsubjects.main(null);
+				frmAddStudentGroup_1.setVisible(false);
 			}
 		});
 		btnNewButton_12_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
