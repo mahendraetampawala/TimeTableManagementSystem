@@ -241,7 +241,7 @@ public class LecturerTimeTable {
 	
 		//generate button
 		JButton btnNewButton_2 = new JButton("GENERATE");
-		btnNewButton_2.setBounds(698, 13, 164, 40);
+		btnNewButton_2.setBounds(684, 10, 178, 43);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -277,16 +277,16 @@ public class LecturerTimeTable {
 		});
 		panel_7.setLayout(null);
 		
-		btnNewButton_2.setForeground(Color.WHITE);
-		btnNewButton_2.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		btnNewButton_2.setBackground(new Color(0, 139, 139));
+		btnNewButton_2.setForeground(Color.BLACK);
+		btnNewButton_2.setFont(new Font("Times New Roman", Font.BOLD, 17));
+		btnNewButton_2.setBackground(Color.CYAN);
 		panel_7.add(btnNewButton_2);
 		
 		
 		
 		//print button
 		JButton btnNewButton_3 = new JButton("PRINT");
-		btnNewButton_3.setBounds(874, 13, 155, 40);
+		btnNewButton_3.setBounds(872, 10, 157, 43);
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -312,22 +312,22 @@ public class LecturerTimeTable {
 		});
 		
 	
-		btnNewButton_3.setForeground(Color.WHITE);
-		btnNewButton_3.setFont(new Font("Times New Roman", Font.BOLD, 15));
-		btnNewButton_3.setBackground(new Color(0, 139, 139));
+		btnNewButton_3.setForeground(Color.BLACK);
+		btnNewButton_3.setFont(new Font("Times New Roman", Font.BOLD, 17));
+		btnNewButton_3.setBackground(Color.CYAN);
 		panel_7.add(btnNewButton_3);
 		
 		comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"                       ----- Select Lecturer Name-----"}));
 		comboBox.setFont(new Font("Times New Roman", Font.BOLD, 14));
-		comboBox.setBounds(314, 18, 360, 30);
+		comboBox.setBounds(296, 10, 378, 38);
 		panel_7.add(comboBox);
 		
 		filllectureNames();
 		
 		JLabel lblNewLabel = new JLabel("Lecturer :");
-		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		lblNewLabel.setBounds(198, 19, 106, 28);
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 18));
+		lblNewLabel.setBounds(187, 10, 106, 28);
 		panel_7.add(lblNewLabel);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -511,19 +511,37 @@ public class LecturerTimeTable {
 		panel_2.setBounds(255, 89, 1081, 76);
 		frmAddStudentGroup_1.getContentPane().add(panel_2);
 		
-		JButton btnNewButton_11 = new JButton("Add Sessions");
+		JButton btnNewButton_11 = new JButton("Lecturer Time Table");
+		btnNewButton_11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frmAddStudentGroup_1.dispose();
+				new LecturerTimeTable();
+			}
+		});
 		btnNewButton_11.setForeground(Color.BLACK);
 		btnNewButton_11.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_11.setBackground(new Color(204, 255, 255));
 		btnNewButton_11.setBounds(10, 10, 266, 56);
 		panel_2.add(btnNewButton_11);
 		
-		JButton btnNewButton_12 = new JButton("Manage Sessions");
+		JButton btnNewButton_12 = new JButton("Location Time Table");
+		btnNewButton_12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frmAddStudentGroup_1.dispose();
+				new LocationTimeTable();
+			}
+		});
 		btnNewButton_12.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_12.setBounds(793, 9, 266, 58);
 		panel_2.add(btnNewButton_12);
 		
-		JButton btnNewButton_12_1 = new JButton("Manage Sessions");
+		JButton btnNewButton_12_1 = new JButton("Student Time Table");
+		btnNewButton_12_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frmAddStudentGroup_1.dispose();
+				new StudentTimeTable();
+			}
+		});
 		btnNewButton_12_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_12_1.setBounds(392, 9, 266, 58);
 		panel_2.add(btnNewButton_12_1);
