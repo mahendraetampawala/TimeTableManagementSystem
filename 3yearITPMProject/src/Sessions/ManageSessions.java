@@ -410,6 +410,7 @@ public class ManageSessions {
 		panel_2.add(btnNewButton_11);
 		
 		JButton btnNewButton_12 = new JButton("Refresh");
+		btnNewButton_12.setBackground(Color.WHITE);
 		btnNewButton_12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ManageSessions managesessions=new ManageSessions();
@@ -418,7 +419,7 @@ public class ManageSessions {
 			}
 		});
 		btnNewButton_12.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		btnNewButton_11.setBackground(new Color(204, 255, 255));
+		btnNewButton_12.setBackground(new Color(204, 255, 255));
 		btnNewButton_12.setBounds(697, 9, 266, 58);
 		panel_2.add(btnNewButton_12);
 		
@@ -873,14 +874,15 @@ public class ManageSessions {
 		panel_5.add(lblNewLabel_11);
 		
 		 comboBoxLec1_1 = new JComboBox();
+		 comboBoxLec1_1.setModel(new DefaultComboBoxModel(new String[] {"--Select Lecturer--"}));
 		 comboBoxLec1_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		 comboBoxLec1_1.setBackground(new Color(255, 255, 255));
+		 comboBoxLec1_1.setBackground(new Color(255, 255, 0));
 		comboBoxLec1_1.setBounds(10, 10, 299, 39);
 		panel_5.add(comboBoxLec1_1);
 		
 		 comboBoxLec1_3 = new JComboBox();
 		 comboBoxLec1_3.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		 comboBoxLec1_3.setBackground(new Color(255, 255, 255));
+		 comboBoxLec1_3.setBackground(new Color(255, 255, 0));
 		comboBoxLec1_3.setBounds(775, 245, 168, 36);
 		panel_5.add(comboBoxLec1_3);
 		
@@ -910,6 +912,7 @@ public class ManageSessions {
 		panel_5.add(textField_2);
 		
 		textField_3 = new JTextField();
+		textField_3.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		textField_3.setEditable(false);
 		textField_3.setBounds(490, 296, 142, 32);
 		panel_5.add(textField_3);
