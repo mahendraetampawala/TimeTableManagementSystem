@@ -279,8 +279,9 @@ public class ManageSessionsRooms {
 		JButton btnNewButton = new JButton("Home");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rframe.dispose();
-				new welcome();
+				welcome welcome=new welcome();
+				welcome.main(null);
+				rframe.setVisible(false);
 			}
 		});
 		btnNewButton.setForeground(Color.BLACK);
@@ -292,8 +293,9 @@ public class ManageSessionsRooms {
 		JButton btnNewButton_1 = new JButton("Lecturers");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rframe.dispose();
-				new AddingLecturers();
+				AddingLecturers addinglectures=new AddingLecturers();
+				addinglectures.main(null);
+				rframe.setVisible(false);
 
 			}
 		});
@@ -305,8 +307,9 @@ public class ManageSessionsRooms {
 		JButton btnNewButton_2 = new JButton("Student Groups");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rframe.dispose();
-				new AddStudentGroups();
+				AddStudentGroups student=new AddStudentGroups();
+				student.main(null);
+				rframe.setVisible(false);
 			}
 		});
 		btnNewButton_2.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -317,8 +320,9 @@ public class ManageSessionsRooms {
 		JButton btnNewButton_3 = new JButton("Subjects");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rframe.dispose();
-				new AddSubjects();
+				AddSubjects addsubjects=new AddSubjects();
+				addsubjects.main(null);
+				rframe.setVisible(false);
 			}
 		});
 		btnNewButton_3.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -329,8 +333,9 @@ public class ManageSessionsRooms {
 		JButton btnNewButton_4_1 = new JButton("Working days/Hours");
 		btnNewButton_4_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rframe.dispose();
-				new AddWorkingDays();
+				AddWorkingDays workingdays=new AddWorkingDays();
+				workingdays.main(null);
+				rframe.setVisible(false);
 			}
 		});
 		btnNewButton_4_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -341,8 +346,9 @@ public class ManageSessionsRooms {
 		JButton btnNewButton_5_1 = new JButton("Sessions");
 		btnNewButton_5_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rframe.dispose();
-				new AddSessions();
+				AddSessions addsessions=new AddSessions();
+				addsessions.main(null);
+				rframe.setVisible(false);
 			}
 		});
 		btnNewButton_5_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -353,8 +359,9 @@ public class ManageSessionsRooms {
 		JButton btnNewButton_6 = new JButton("Locations");
 		btnNewButton_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rframe.dispose();
-				new AddLocations();
+				AddLocations addlocations=new AddLocations();
+				addlocations.main(null);
+				rframe.setVisible(false);
 			}
 		});
 		btnNewButton_6.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -365,8 +372,9 @@ public class ManageSessionsRooms {
 		JButton btnNewButton_7 = new JButton("Tags");
 		btnNewButton_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rframe.dispose();
-				new AddTags();
+				AddTags addtags=new AddTags();
+				addtags.main(null);
+				rframe.setVisible(false);
 			}
 		});
 		btnNewButton_7.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -377,8 +385,9 @@ public class ManageSessionsRooms {
 		JButton btnNewButton_8_1 = new JButton("Session Types");
 		btnNewButton_8_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rframe.dispose();
-				new AddConsecutiveSession();
+				AddConsecutiveSession AddConsecutiveSession=new AddConsecutiveSession();
+				AddConsecutiveSession.main(null);
+				rframe.setVisible(false);
 			}
 		});
 		btnNewButton_8_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -389,8 +398,9 @@ public class ManageSessionsRooms {
 		JButton btnNewButton_8 = new JButton("Session Rooms");
 		btnNewButton_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rframe.dispose();
-				new ManageSessionsRooms();
+				ManageSessionsRooms ssr=new ManageSessionsRooms();
+				ssr.main(null);
+				rframe.setVisible(false);
 			}
 		});
 		btnNewButton_8.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -401,8 +411,9 @@ public class ManageSessionsRooms {
 		JButton btnNewButton_9 = new JButton("Generate Timetables");
 		btnNewButton_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rframe.dispose();
-				new LecturerTimeTable();
+				LecturerTimeTable tt=new LecturerTimeTable();
+				tt.main(null);
+				rframe.setVisible(false);
 			}
 		});
 		btnNewButton_9.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -413,8 +424,9 @@ public class ManageSessionsRooms {
 		JButton btnNewButton_10_1 = new JButton("Statistics");
 		btnNewButton_10_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				rframe.dispose();
-				new StatisticsGraph();
+				StatisticsGraph statistics=new StatisticsGraph();
+				statistics.main(null);
+				rframe.setVisible(false);
 			}
 		});
 		btnNewButton_10_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -436,6 +448,13 @@ public class ManageSessionsRooms {
 		panel_2.add(btnNewButton_11);
 		
 		JButton btnNewButton_12 = new JButton("Manage Lecturers");
+		btnNewButton_12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ManageSessionsRooms msr=new ManageSessionsRooms();
+				msr.main(null);
+				rframe.setVisible(false);
+			}
+		});
 		btnNewButton_12.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_12.setBackground(new Color(204, 255, 255));
 		btnNewButton_12.setBounds(769, 9, 266, 58);

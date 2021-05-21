@@ -988,15 +988,16 @@ public void refreshtable() {
 		btnNewButton_2_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				frame.dispose();
-				new AddParallelSession();
+				AddParallelSession addparallelsession=new AddParallelSession();
+				addparallelsession.main(null);
+				frame.setVisible(false);
 				
 			}
 		});
 		btnNewButton_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				AddParallelSession addparallelsession=new AddParallelSession();
+				AddConsecutiveSession addparallelsession=new AddConsecutiveSession();
 				addparallelsession.main(null);
 				frame.setVisible(false);
 				
