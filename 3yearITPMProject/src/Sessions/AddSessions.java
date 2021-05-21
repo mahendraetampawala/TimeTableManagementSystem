@@ -79,7 +79,7 @@ public class AddSessions {
 	public void viewTags() {
 		Connection conn = DBConnection.connect();
 		try{
-			String query="select * from Tags";
+			String query="select * from Tag";
 			pst=conn.prepareStatement(query);
 			rs=pst.executeQuery();
 			//table.setModel(DbUtils.resultSetToTableModel(rs));
@@ -87,6 +87,25 @@ public class AddSessions {
 				//comboBoxLec1.addItem(rs.getString("LecturerName"));
 				String name=rs.getString("TagName");
 				comboBox_2.addItem(name);
+			}
+			conn.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+	}
+	
+	public void viewgroupID() {
+		Connection conn = DBConnection.connect();
+		try{
+			String query="select * from StudentGroups";
+			pst=conn.prepareStatement(query);
+			rs=pst.executeQuery();
+			//table.setModel(DbUtils.resultSetToTableModel(rs));
+			while(rs.next()) {
+				//comboBoxLec1.addItem(rs.getString("LecturerName"));
+				String name=rs.getString("SubGroupID");
+				comboBox_3.addItem(name);
 			}
 			conn.close();
 		}catch(Exception e) {
@@ -670,12 +689,14 @@ public class AddSessions {
 		panel_3.add(btnNewButton_14);
 		
 	    comboBoxLec1 = new JComboBox();
+	    comboBoxLec1.setModel(new DefaultComboBoxModel(new String[] {"----------Select Lecturer-----------"}));
 	    comboBoxLec1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 	    comboBoxLec1.setBackground(new Color(255, 255, 255));
 		comboBoxLec1.setBounds(289, 87, 511, 36);
 		panel_3.add(comboBoxLec1);
 		
 		 comboBox_1 = new JComboBox();
+		 comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"----------Select Lecturer-----------"}));
 		 comboBox_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		 comboBox_1.setBackground(new Color(255, 255, 255));
 		comboBox_1.setBounds(289, 135, 511, 36);
@@ -683,13 +704,13 @@ public class AddSessions {
 		
 		 comboBox_2 = new JComboBox();
 		 comboBox_2.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		 comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Tutorials", "Labs", "Lecturers"}));
+		 comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"----Select Tag----"}));
 		 comboBox_2.setBackground(new Color(255, 255, 0));
 		comboBox_2.setBounds(289, 181, 225, 36);
 		panel_3.add(comboBox_2);
 		
 		 comboBox_3 = new JComboBox();
-		 comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"12.1", "12.2", "13.1", "13.2", "14.1", "14.2"}));
+		 comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"-Select Student Group-"}));
 		 comboBox_3.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		 comboBox_3.setBackground(new Color(255, 255, 0));
 		comboBox_3.setBounds(289, 227, 225, 36);
@@ -841,6 +862,8 @@ public class AddSessions {
 		fillcombobox();
 		fillcombobox2();
 		fillcombobox3();
+		viewgroupID();
+		viewTags();
 		calculateDuration();
 		checksubjectcode();
 		//fillcombobox4();

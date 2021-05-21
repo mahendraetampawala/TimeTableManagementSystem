@@ -99,6 +99,24 @@ public class ManageSessions {
 		}
 	}
 	
+	public void viewTag() {
+		Connection conn = DBConnection.connect();
+		try{
+			String query="select * from Tag";
+			pst=conn.prepareStatement(query);
+			rs=pst.executeQuery();
+			//table.setModel(DbUtils.resultSetToTableModel(rs));
+			while(rs.next()) {
+				//comboBoxLec1.addItem(rs.getString("LecturerName"));
+				String name=rs.getString("TagName");
+				comboBox.addItem(name);
+			}
+			conn.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+	}
 	
 	
 	
@@ -531,7 +549,7 @@ public class ManageSessions {
 		
 		comboBox = new JComboBox();
 		comboBox.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Tutorials", "Labs", "Lecturers"}));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"----------Select Tag-------------"}));
 		comboBox.setBounds(341, 12, 339, 39);
 		panel_5.add(comboBox);
 		comboBox.setBackground(new Color(255, 255, 0));
@@ -1051,7 +1069,7 @@ public class ManageSessions {
 		fillcombobox();
 		fillcombobox1();
 		fillcombobox2();
-		
+		viewTag();
 		fillsubjectName();
 		
 	}

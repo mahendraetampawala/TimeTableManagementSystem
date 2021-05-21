@@ -307,7 +307,7 @@ private JFrame frame;
 		
 		JComboBox RelatedTag = new JComboBox();
 		RelatedTag.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		RelatedTag.setBackground(new Color(255, 255, 255));
+		RelatedTag.setBackground(new Color(255, 255, 0));
 		RelatedTag.setModel(new DefaultComboBoxModel(new String[] {"---Select A Related Tag---", "Lec", "Tute", "Lab"}));
 		RelatedTag.setBounds(325, 225, 317, 33);
 		panel_3.add(RelatedTag);
