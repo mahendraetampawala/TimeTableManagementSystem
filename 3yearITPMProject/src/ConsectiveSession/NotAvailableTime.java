@@ -330,7 +330,7 @@ public void refreshtable() {
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(261, 184, 1083, 506);
+		panel_3.setBounds(261, 184, 1075, 478);
 		panel_3.setLayout(null);
 		panel_3.setBackground(new Color(230, 230, 250));
 		frame.getContentPane().add(panel_3);
@@ -346,8 +346,8 @@ public void refreshtable() {
 		JPanel panel_4 = new JPanel();
 		panel_4.setLayout(null);
 		panel_4.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_4.setBackground(SystemColor.menu);
-		panel_4.setBounds(29, 17, 853, 315);
+		panel_3.setBackground(new Color(204, 255, 102));
+		panel_4.setBounds(0, 0, 1073, 332);
 		panel_3.add(panel_4);
 		
 		JLabel lblSelectSessionId = new JLabel("Select Session ID");
@@ -633,11 +633,11 @@ public void refreshtable() {
 		delete.setFont(new Font("Tahoma", Font.BOLD, 14));
 		delete.setEnabled(true);
 		delete.setBackground(new Color(0, 153, 153));
-		delete.setBounds(940, 301, 141, 31);
+		delete.setBounds(892, 342, 141, 31);
 		panel_3.add(delete);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(81, 374, 853, 113);
+		scrollPane.setBounds(29, 342, 853, 113);
 		panel_3.add(scrollPane);
 		
 		
@@ -777,7 +777,7 @@ public void refreshtable() {
 		btnUpdate.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnUpdate.setEnabled(true);
 		btnUpdate.setBackground(new Color(0, 153, 153));
-		btnUpdate.setBounds(940, 415, 141, 31);
+		btnUpdate.setBounds(892, 424, 141, 31);
 		panel_3.add(btnUpdate);
 		
 		
@@ -805,7 +805,7 @@ public void refreshtable() {
 		btnrefresh.setFont(new Font("Tahoma", Font.BOLD, 14));
 		btnrefresh.setEnabled(true);
 		btnrefresh.setBackground(new Color(0, 153, 153));
-		btnrefresh.setBounds(940, 353, 141, 31);
+		btnrefresh.setBounds(892, 385, 141, 31);
 		panel_3.add(btnrefresh);
 		
 		JPanel panel = new JPanel();
