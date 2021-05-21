@@ -38,6 +38,18 @@ import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
 import Connection.DBConnection;
+import ConsectiveSession.AddConsecutiveSession;
+import DaysNHours.AddWorkingDays;
+import Home.welcome;
+import Lecturers_Management.AddingLecturers;
+import Location.AddLocations;
+
+import Sessions.AddSessions;
+import Statistics.StatisticsGraph;
+import Student_Groups.AddStudentGroups;
+import Subjects.AddSubjects;
+import Tags.AddTags;
+import Timetables.LecturerTimeTable;
 
 import javax.swing.JComboBox;
 import javax.swing.JTextArea;
@@ -265,6 +277,12 @@ public class ManageSessionsRooms {
 		rframe.getContentPane().add(panel_1);
 		
 		JButton btnNewButton = new JButton("Home");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rframe.dispose();
+				new welcome();
+			}
+		});
 		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton.setBackground(Color.CYAN);
@@ -272,66 +290,133 @@ public class ManageSessionsRooms {
 		panel_1.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Lecturers");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rframe.dispose();
+				new AddingLecturers();
+
+			}
+		});
 		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_1.setBackground(Color.CYAN);
 		btnNewButton_1.setBounds(10, 58, 213, 38);
 		panel_1.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Student Groups");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rframe.dispose();
+				new AddStudentGroups();
+			}
+		});
 		btnNewButton_2.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_2.setBackground(Color.CYAN);
 		btnNewButton_2.setBounds(10, 106, 213, 38);
 		panel_1.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Subjects");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rframe.dispose();
+				new AddSubjects();
+			}
+		});
 		btnNewButton_3.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_3.setBackground(Color.CYAN);
 		btnNewButton_3.setBounds(10, 154, 213, 38);
 		panel_1.add(btnNewButton_3);
 		
 		JButton btnNewButton_4_1 = new JButton("Working days/Hours");
+		btnNewButton_4_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rframe.dispose();
+				new AddWorkingDays();
+			}
+		});
 		btnNewButton_4_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_4_1.setBackground(Color.CYAN);
 		btnNewButton_4_1.setBounds(10, 202, 213, 38);
 		panel_1.add(btnNewButton_4_1);
 		
 		JButton btnNewButton_5_1 = new JButton("Sessions");
+		btnNewButton_5_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rframe.dispose();
+				new AddSessions();
+			}
+		});
 		btnNewButton_5_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_5_1.setBackground(Color.CYAN);
 		btnNewButton_5_1.setBounds(10, 250, 213, 38);
 		panel_1.add(btnNewButton_5_1);
 		
 		JButton btnNewButton_6 = new JButton("Locations");
+		btnNewButton_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rframe.dispose();
+				new AddLocations();
+			}
+		});
 		btnNewButton_6.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_6.setBackground(Color.CYAN);
 		btnNewButton_6.setBounds(10, 298, 213, 38);
 		panel_1.add(btnNewButton_6);
 		
 		JButton btnNewButton_7 = new JButton("Tags");
+		btnNewButton_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rframe.dispose();
+				new AddTags();
+			}
+		});
 		btnNewButton_7.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_7.setBackground(Color.CYAN);
 		btnNewButton_7.setBounds(10, 346, 213, 38);
 		panel_1.add(btnNewButton_7);
 		
 		JButton btnNewButton_8_1 = new JButton("Session Types");
+		btnNewButton_8_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rframe.dispose();
+				new AddConsecutiveSession();
+			}
+		});
 		btnNewButton_8_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_8_1.setBackground(Color.CYAN);
 		btnNewButton_8_1.setBounds(10, 394, 213, 38);
 		panel_1.add(btnNewButton_8_1);
 		
 		JButton btnNewButton_8 = new JButton("Session Rooms");
+		btnNewButton_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rframe.dispose();
+				new ManageSessionsRooms();
+			}
+		});
 		btnNewButton_8.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_8.setBackground(Color.CYAN);
 		btnNewButton_8.setBounds(10, 442, 213, 38);
 		panel_1.add(btnNewButton_8);
 		
 		JButton btnNewButton_9 = new JButton("Generate Timetables");
+		btnNewButton_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rframe.dispose();
+				new LecturerTimeTable();
+			}
+		});
 		btnNewButton_9.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_9.setBackground(Color.CYAN);
 		btnNewButton_9.setBounds(10, 490, 213, 38);
 		panel_1.add(btnNewButton_9);
 		
 		JButton btnNewButton_10_1 = new JButton("Statistics");
+		btnNewButton_10_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rframe.dispose();
+				new StatisticsGraph();
+			}
+		});
 		btnNewButton_10_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_10_1.setBackground(Color.CYAN);
 		btnNewButton_10_1.setBounds(10, 538, 213, 38);
