@@ -35,7 +35,9 @@ import Connection.DBConnection;
 import ConsectiveSession.AddConsecutiveSession;
 import Home.welcome;
 import Lecturers_Management.AddingLecturers;
+import Rooms.ManageSessionsRooms;
 import Sessions.AddSessions;
+import Statistics.StatisticsGraph;
 import Student_Groups.AddStudentGroups;
 import Subjects.AddSubjects;
 import Tags.AddTags;
@@ -228,6 +230,14 @@ public class ManageWorkingDays {
 		panel_1.add(btnNewButton_8_1);
 		
 		JButton btnNewButton_8 = new JButton("Session Rooms");
+		btnNewButton_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ManageSessionsRooms ssr=new ManageSessionsRooms();
+				ssr.main(null);
+				frame.setVisible(false);
+
+			}
+		});
 		btnNewButton_8.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_8.setBackground(Color.CYAN);
 		btnNewButton_8.setBounds(10, 442, 213, 38);
@@ -240,6 +250,13 @@ public class ManageWorkingDays {
 		panel_1.add(btnNewButton_9);
 		
 		JButton btnNewButton_10_1 = new JButton("Statistics");
+		btnNewButton_10_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				StatisticsGraph statistics=new StatisticsGraph();
+				statistics.main(null);
+				frame.setVisible(false);
+			}
+		});
 		btnNewButton_10_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_10_1.setBackground(Color.CYAN);
 		btnNewButton_10_1.setBounds(10, 538, 213, 38);

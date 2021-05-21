@@ -497,7 +497,7 @@ public class AddStudentGroups {
 
 		                	Connection con = DBConnection.connect();
 
-		                    String query = "INSERT INTO StudentGroups values(10,'" + AcademicYearSe + "','" + programme + "','" + groupID + "','" +
+		                    String query = "INSERT INTO StudentGroups values(null,'" + AcademicYearSe + "','" + programme + "','" + groupID + "','" +
 		                    		subgroupID + "','" + ggroupID + "','" + subID + "')";
 
 		                    java.sql.Statement sta = con.createStatement();

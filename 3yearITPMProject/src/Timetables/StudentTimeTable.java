@@ -14,6 +14,7 @@ import javax.swing.table.TableColumnModel;
 
 import Connection.DBConnection;
 import ConsectiveSession.AddConsecutiveSession;
+
 import Home.welcome;
 import Lecturers_Management.AddingLecturers;
 import Sessions.AddSessions;
@@ -38,7 +39,7 @@ import javax.swing.DefaultComboBoxModel;
 
 public class StudentTimeTable {
 
-	private JFrame frame;
+	JFrame frame;
 	private JTable table;
 
 	/**
@@ -68,6 +69,46 @@ public class StudentTimeTable {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	
+			
+		
+	  
+	  public void fillSubGroupID() {
+			
+			try {
+				
+				 Connection con = DBConnection.connect();
+				 
+				 String query="select * from StudentGroups";
+				 
+				 PreparedStatement pst = con.prepareStatement(query);
+				 ResultSet rs = pst.executeQuery();
+				 
+				 while(rs.next()) {
+					 
+					 String name =rs.getString("SubGroupID");
+					 comboBox.addItem(name);
+					 //comboBox_4_1.addItem(rs.getString("SubGroupID"));
+					 
+				}
+				con.close();
+			}
+			
+			catch(Exception e) {
+				
+					e.printStackTrace();
+				}
+			
+	     	}
+	     
+	
+	 
+	  
+	 
+	
+
+	  
+	
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(30, 30, 1550, 750);
@@ -320,8 +361,8 @@ public class StudentTimeTable {
 				Connection con = DBConnection.connect();
 					
 					
-					String sql="";
-					PreparedStatement pst=con.prepareStatement(sql);
+				String query="select Date as Day,startTime || ' ' || start AS StartTime,endTime || ' ' || end AS EndTime,sessionSign from notavailableTime where (selectGroup='"+comboBox.getSelectedItem().toString()+"' ) OR (selectSubGroup = '"+comboBox.getSelectedItem().toString()+"') order by Date,StartTime,EndTime";
+					PreparedStatement pst=con.prepareStatement(query);
 					ResultSet rs=pst.executeQuery();
 					table.setModel(DbUtils.resultSetToTableModel(rs));
 					
@@ -354,7 +395,8 @@ public class StudentTimeTable {
 		comboBox.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		comboBox.setBackground(Color.WHITE);
 		panel_3.add(comboBox);
-		
+
+		fillSubGroupID();
 		JLabel lblNewLabel_1 = new JLabel("Student Group Name");
 		lblNewLabel_1.setBounds(135, 30, 173, 40);
 		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 18));

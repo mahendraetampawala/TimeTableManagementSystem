@@ -19,6 +19,7 @@ import Lecturers_Management.AddingLecturers;
 import Sessions.AddSessions;
 import Student_Groups.AddStudentGroups;
 import Tags.AddTags;
+import Timetables.LecturerTimeTable;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -217,6 +218,13 @@ public class AddSubjects {
 		panel_1.add(btnNewButton_8);
 		
 		JButton btnNewButton_9 = new JButton("Generate Timetables");
+		btnNewButton_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LecturerTimeTable tt=new LecturerTimeTable();
+				tt.main(null);
+				frame.setVisible(false);
+			}
+		});
 		btnNewButton_9.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_9.setBackground(Color.CYAN);
 		btnNewButton_9.setBounds(10, 490, 213, 38);
@@ -271,7 +279,7 @@ public class AddSubjects {
 		JComboBox comboBox = new JComboBox();
 		comboBox.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		comboBox.setBackground(new Color(255, 255, 255));
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021"}));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9"}));
 		comboBox.setBounds(211, 26, 317, 33);
 		panel_3.add(comboBox);
 		

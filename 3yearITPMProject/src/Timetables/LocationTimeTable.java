@@ -6,35 +6,51 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.table.TableColumnModel;
 
+import Connection.DBConnection;
 import ConsectiveSession.AddConsecutiveSession;
+
 import Home.welcome;
 import Lecturers_Management.AddingLecturers;
 import Sessions.AddSessions;
 import Student_Groups.AddStudentGroups;
 import Subjects.AddSubjects;
 import Tags.AddTags;
+import net.proteanit.sql.DbUtils;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.awt.event.ActionEvent;
+import javax.swing.DefaultComboBoxModel;
 
 public class LocationTimeTable {
 
 	private JFrame frame;
+	private JTable table;
 
 	/**
 	 * Launch the application.
 	 */
+	JComboBox comboBox;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LocationTimeTable window = new LocationTimeTable();
+					StudentTimeTable window = new StudentTimeTable();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -45,6 +61,7 @@ public class LocationTimeTable {
 
 	/**
 	 * Create the application.
+	 * @wbp.parser.entryPoint
 	 */
 	public LocationTimeTable() {
 		initialize();
@@ -53,6 +70,46 @@ public class LocationTimeTable {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	
+			
+		
+	  
+	  public void fillSubGroupID() {
+			
+			try {
+				
+				 Connection con = DBConnection.connect();
+				 
+				 String query="select * from StudentGroups";
+				 
+				 PreparedStatement pst = con.prepareStatement(query);
+				 ResultSet rs = pst.executeQuery();
+				 
+				 while(rs.next()) {
+					 
+					 String name =rs.getString("SubGroupID");
+					 comboBox.addItem(name);
+					 //comboBox_4_1.addItem(rs.getString("SubGroupID"));
+					 
+				}
+				con.close();
+			}
+			
+			catch(Exception e) {
+				
+					e.printStackTrace();
+				}
+			
+	     	}
+	     
+	
+	 
+	  
+	 
+	
+
+	  
+	
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(30, 30, 1550, 750);
@@ -99,7 +156,6 @@ public class LocationTimeTable {
 				AddingLecturers addinglectures=new AddingLecturers();
 				addinglectures.main(null);
 				frame.setVisible(false);
-
 			}
 		});
 		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -164,7 +220,6 @@ public class LocationTimeTable {
 				AddTags addtags=new AddTags();
 				addtags.main(null);
 				frame.setVisible(false);
-
 			}
 		});
 		btnNewButton_7.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -252,33 +307,109 @@ public class LocationTimeTable {
 		panel_2.add(btnNewButton_12_1);
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setLayout(null);
 		panel_3.setBackground(new Color(204, 255, 102));
 		panel_3.setBounds(253, 177, 1277, 526);
 		frame.getContentPane().add(panel_3);
+		panel_3.setLayout(null);
 		
 		JButton btnNewButton_14 = new JButton("Print");
+		btnNewButton_14.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+
+				
+				
+				MessageFormat header = new MessageFormat("Student TimeTable - Group "+comboBox.getSelectedItem().toString());
+				Date date = new Date();  
+			    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd  HH:mm:ss.SSS");  
+			    String strDate= formatter.format(date);  
+				MessageFormat footer = new MessageFormat("Timetable generated on:" +strDate);
+				
+				
+				try {
+					
+					table.print(JTable.PrintMode.FIT_WIDTH,header,footer);
+					
+					
+				}catch(Exception e1) {
+					
+					JOptionPane.showMessageDialog(null, "       Unable to print","Alert",JOptionPane.WARNING_MESSAGE);
+					
+				}
+			
+			
+				
+			}
+		});
+		btnNewButton_14.setBounds(1039, 30, 228, 40);
 		btnNewButton_14.setFont(new Font("Times New Roman", Font.BOLD, 19));
 		btnNewButton_14.setBackground(Color.CYAN);
-		btnNewButton_14.setBounds(1039, 30, 228, 40);
 		panel_3.add(btnNewButton_14);
 		
 		JButton btnNewButton_15 = new JButton("Generate");
+		btnNewButton_15.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+
+				if(comboBox.getSelectedItem().toString().equals(" ") || comboBox.getSelectedItem().toString().equals("None"))
+				{
+					
+					JOptionPane.showMessageDialog(null, "    Please Select Student Group  ","Failed",JOptionPane.WARNING_MESSAGE);
+				}
+				else {
+			try {
+				
+				Connection con = DBConnection.connect();
+					
+					
+				String query="select Date as Day,startTime || ' ' || start AS StartTime,endTime || ' ' || end AS EndTime,sessionSign from notavailableTime where (selectGroup='"+comboBox.getSelectedItem().toString()+"' ) OR (selectSubGroup = '"+comboBox.getSelectedItem().toString()+"') order by Date,StartTime,EndTime";
+					PreparedStatement pst=con.prepareStatement(query);
+					ResultSet rs=pst.executeQuery();
+					table.setModel(DbUtils.resultSetToTableModel(rs));
+					
+					
+					
+					
+					TableColumnModel columnModel = table.getColumnModel();
+					columnModel.getColumn(0).setPreferredWidth(5);
+					columnModel.getColumn(1).setPreferredWidth(5);
+					columnModel.getColumn(2).setPreferredWidth(5);
+					columnModel.getColumn(3).setPreferredWidth(600);
+					
+					
+				}
+				catch(Exception ex) {
+					ex.printStackTrace();
+				}}
+			
+				
+			}
+		});
+		btnNewButton_15.setBounds(771, 30, 228, 40);
 		btnNewButton_15.setFont(new Font("Times New Roman", Font.BOLD, 19));
 		btnNewButton_15.setBackground(Color.CYAN);
-		btnNewButton_15.setBounds(771, 30, 228, 40);
 		panel_3.add(btnNewButton_15);
 		
-		JComboBox comboBox = new JComboBox();
+		 comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"-----Select Location-----"}));
+		comboBox.setBounds(318, 31, 339, 39);
 		comboBox.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		comboBox.setBackground(Color.WHITE);
-		comboBox.setBounds(318, 31, 339, 39);
 		panel_3.add(comboBox);
-		
+
+		fillSubGroupID();
 		JLabel lblNewLabel_1 = new JLabel("Location");
+		lblNewLabel_1.setBounds(135, 30, 173, 40);
 		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 18));
-		lblNewLabel_1.setBounds(176, 30, 132, 40);
 		panel_3.add(lblNewLabel_1);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 80, 1257, 436);
+		panel_3.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 

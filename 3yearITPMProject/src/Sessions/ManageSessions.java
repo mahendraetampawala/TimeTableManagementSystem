@@ -99,6 +99,8 @@ public class ManageSessions {
 		}
 	}
 	
+	
+	
 	public void viewgroupID() {
 		Connection conn = DBConnection.connect();
 		try{
@@ -413,9 +415,24 @@ public class ManageSessions {
 		btnNewButton_12.setBackground(Color.WHITE);
 		btnNewButton_12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ManageSessions managesessions=new ManageSessions();
-				managesessions.main(null);
-				frame.setVisible(false);
+				
+				Connection conn = DBConnection.connect();
+				
+				
+	            try {
+	            	//String tag=comboBox.getSelectedItem().toString();
+	            	//String lecname=comboBoxLec1_1.getSelectedItem().toString();
+	            	
+	            	String sql="select * from Sessions";
+					pst=conn.prepareStatement(sql);
+					
+					rs=pst.executeQuery();
+					table.setModel(DbUtils.resultSetToTableModel(rs));
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+	            
 			}
 		});
 		btnNewButton_12.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -765,7 +782,7 @@ public class ManageSessions {
 					}else {
 					Connection con = DBConnection.connect();
 					
-					String query="Delete from Sessions where SessionID='"+textField.getText()+"'";
+					String query="Delete from Sessions where SessionID='"+textField_4.getText()+"'";
 					PreparedStatement pst=con.prepareStatement(query);
 					pst.executeUpdate();
 					JOptionPane.showMessageDialog(null, "Session Deleted");

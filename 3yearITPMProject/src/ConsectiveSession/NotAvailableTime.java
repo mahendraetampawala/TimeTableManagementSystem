@@ -267,14 +267,14 @@ public void refreshtable() {
 				
 				 Connection con = DBConnection.connect();
 				 
-				 String query="select * from location";
+				 String query="select * from Locations";
 				 
 				 PreparedStatement pst = con.prepareStatement(query);
 				 ResultSet rs = pst.executeQuery();
 				 
 				 while(rs.next()) {
 					 
-					 String name =rs.getString("roomName");
+					 String name =rs.getString("RoomName");
 					 
 					 selectroom.addItem(name);
 					 
@@ -358,7 +358,7 @@ public void refreshtable() {
 		
 		selectsession = new JComboBox();
 		selectsession.setFont(new Font("Tahoma", Font.BOLD, 13));
-		selectsession.setBounds(175, 27, 149, 22);
+		selectsession.setBounds(151, 27, 523, 22);
 		selectsession.setModel(new DefaultComboBoxModel(new String[] {""}));
 		panel_4.add(selectsession);
 		fillsession() ;
@@ -551,13 +551,13 @@ public void refreshtable() {
 		//Add session sign
 		JLabel session = new JLabel("Session Signature");
 		session.setFont(new Font("Tahoma", Font.BOLD, 12));
-		session.setBounds(499, 30, 113, 14);
+		session.setBounds(363, 61, 113, 14);
 		panel_4.add(session);
 		
 		sessionsign = new JComboBox();
 		sessionsign.setFont(new Font("Tahoma", Font.BOLD, 13));
 		sessionsign.setModel(new DefaultComboBoxModel(new String[] {""}));
-		sessionsign.setBounds(663, 28, 149, 20);
+		sessionsign.setBounds(486, 59, 552, 20);
 		panel_4.add(sessionsign);
 		fillsign();
 		
