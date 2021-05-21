@@ -12,8 +12,12 @@ import java.awt.Image;
 import javax.swing.SwingConstants;
 
 import ConsectiveSession.AddConsecutiveSession;
+import DaysNHours.AddWorkingDays;
 import Lecturers_Management.AddingLecturers;
+import Location.AddLocations;
+import Rooms.ManageSessionsRooms;
 import Sessions.AddSessions;
+import Statistics.StatisticsGraph;
 import Student_Groups.AddStudentGroups;
 import Subjects.AddSubjects;
 import Tags.AddTags;
@@ -116,6 +120,10 @@ public class welcome {
 		JButton btnNewButton_4 = new JButton("Working days/Hours");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				AddWorkingDays workingdays=new AddWorkingDays();
+				workingdays.main(null);
+				frame.setVisible(false);
+
 				
 			}
 		});
@@ -141,7 +149,9 @@ public class welcome {
 		JButton btnNewButton_6 = new JButton("Locations");
 		btnNewButton_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				AddLocations addlocations=new AddLocations();
+				addlocations.main(null);
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton_6.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -166,7 +176,10 @@ public class welcome {
 		btnNewButton_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				ManageSessionsRooms ssr=new ManageSessionsRooms();
+				ssr.main(null);
+				frame.setVisible(false);
+
 				
 			}
 		});
@@ -193,6 +206,14 @@ public class welcome {
 		frame.getContentPane().add(btnNewButton_9);
 		
 		JButton btnNewButton_10 = new JButton("Statistics");
+		btnNewButton_10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				StatisticsGraph statistics=new StatisticsGraph();
+				statistics.main(null);
+				frame.setVisible(false);
+			}
+		});
 		btnNewButton_10.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_10.setBackground(Color.CYAN);
 		btnNewButton_10.setBounds(399, 665, 371, 38);

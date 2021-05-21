@@ -29,12 +29,14 @@ import Connection.DBConnection;
 import ConsectiveSession.AddConsecutiveSession;
 import Home.welcome;
 import Lecturers_Management.AddingLecturers;
+import Location.AddLocations;
 import Rooms.ManageSessionsRooms;
 import Sessions.AddSessions;
 import Statistics.StatisticsGraph;
 import Student_Groups.AddStudentGroups;
 import Subjects.AddSubjects;
 import Tags.AddTags;
+import Timetables.LecturerTimeTable;
 
 import javax.swing.JCheckBox;
 
@@ -223,6 +225,10 @@ public class AddWorkingDays {
 		JButton btnNewButton_6 = new JButton("Locations");
 		btnNewButton_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				AddLocations addlocations=new AddLocations();
+				addlocations.main(null);
+				frame.setVisible(false);
+				
 			}
 		});
 		btnNewButton_6.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -273,6 +279,9 @@ public class AddWorkingDays {
 		JButton btnNewButton_9 = new JButton("Generate Timetables");
 		btnNewButton_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				LecturerTimeTable lectime=new LecturerTimeTable();
+				lectime.main(null);
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton_9.setFont(new Font("Times New Roman", Font.BOLD, 20));
