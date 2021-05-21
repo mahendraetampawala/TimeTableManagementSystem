@@ -1,4 +1,4 @@
-package Location;
+package Locations_Management;
 
 import java.awt.Color;
 import java.awt.EventQueue;

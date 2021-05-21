@@ -4,7 +4,7 @@
  */
 
 
-package Locations;
+package Location;
 
 import java.awt.Color;
 import java.awt.EventQueue;

@@ -43,9 +43,9 @@ import DaysNHours.AddWorkingDays;
 import Home.welcome;
 import Lecturers_Management.AddingLecturers;
 import Location.ManageLocations;
-import SessionRooms.ManageAddSessions;
+
 import Sessions.AddSessions;
-import Statistics.StatisticsGraph;
+
 import Student_Groups.AddStudentGroups;
 import Student_Groups.ManageStudentGroups;
 import Subjects.AddSubjects;
@@ -902,9 +902,7 @@ public void refreshtable() {
 		JButton btnNewButton_8 = new JButton("Session Rooms");
 		btnNewButton_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ManageAddSessions sroom=new ManageAddSessions();
-				sroom.main(null);
-				frame.setVisible(false);
+			
 			}
 		});
 		btnNewButton_8.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -928,9 +926,7 @@ public void refreshtable() {
 		JButton btnNewButton_10_1 = new JButton("Statistics");
 		btnNewButton_10_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				StatisticsGraph statistics=new StatisticsGraph();
-				statistics.main(null);
-				frame.setVisible(false);
+				
 
 			}
 		});

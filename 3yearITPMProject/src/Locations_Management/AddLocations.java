@@ -1,4 +1,4 @@
-package Location;
+package Locations_Management;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -155,7 +155,7 @@ public class AddLocations {
 		JButton btnNewButton_10 = new JButton("Statistics");
 		btnNewButton_10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
+				
 			}
 		});
 		btnNewButton_10.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -336,7 +336,8 @@ public class AddLocations {
 
 		                	Connection con = DBConnection.connect();
 
-		                    String query = "INSERT INTO Locations values(null,'" + BName + "','" + RName + "','" + RType + "','" +capacity + "')";
+		                    String query = "INSERT INTO Locations values(null,'" + BName + "','" + RName + "','" + RType + "','" +
+		                    		capacity + "')";
 
 		                    java.sql.Statement sta = con.createStatement();
 		                    int xx = sta.executeUpdate(query);

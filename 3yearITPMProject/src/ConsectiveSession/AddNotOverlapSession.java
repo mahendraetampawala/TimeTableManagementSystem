@@ -29,9 +29,9 @@ import DaysNHours.AddWorkingDays;
 import Home.welcome;
 import Lecturers_Management.AddingLecturers;
 import Location.ManageLocations;
-import SessionRooms.ManageAddSessions;
+
 import Sessions.AddSessions;
-import Statistics.StatisticsGraph;
+
 import Student_Groups.AddStudentGroups;
 import Subjects.AddSubjects;
 import Tags.AddTags;
@@ -276,9 +276,7 @@ public class AddNotOverlapSession{
 		JButton btnNewButton_8 = new JButton("Session Rooms");
 		btnNewButton_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ManageAddSessions sroom=new ManageAddSessions();
-				sroom.main(null);
-				frame.setVisible(false);
+			
 
 			}
 		});
@@ -304,9 +302,7 @@ public class AddNotOverlapSession{
 		JButton btnNewButton_10 = new JButton("Statistics");
 		btnNewButton_10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				StatisticsGraph statistics=new StatisticsGraph();
-				statistics.main(null);
-				frame.setVisible(false);
+		
 
 			}
 		});
