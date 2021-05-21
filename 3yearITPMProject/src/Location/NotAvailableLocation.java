@@ -104,14 +104,14 @@ public void refreshtable() {
 			
 			 Connection con = DBConnection.connect();
 			 
-			 String query="select * from location";
+			 String query="select * from Locations";
 			 
 			 PreparedStatement pst = con.prepareStatement(query);
 			 ResultSet rs = pst.executeQuery();
 			 
 			 while(rs.next()) {
 				 
-				 String name =rs.getString("roomName");
+				 String name =rs.getString("RoomName");
 				 
 				 selectroom.addItem(name);
 			
@@ -134,14 +134,14 @@ public void refreshtable() {
 			
 			 Connection con = DBConnection.connect();
 			 
-			 String query="select * from session";
+			 String query="select * from Sessions";
 			 
 			 PreparedStatement pst = con.prepareStatement(query);
 			 ResultSet rs = pst.executeQuery();
 			 
 			 while(rs.next()) {
 				 
-				 String name =rs.getString("sessionSignature");
+				 String name =rs.getString("SID");
 				 
 				 sessionsign.addItem(name);
 				 
