@@ -205,7 +205,7 @@ public class LecturerTimeTable {
 			}
 		});
 		frmAddStudentGroup_1 = new JFrame();
-		frmAddStudentGroup_1.getContentPane().setBackground(SystemColor.inactiveCaptionBorder);
+		frmAddStudentGroup_1.getContentPane().setBackground(new Color(51, 0, 0));		
 		frmAddStudentGroup_1.setBackground(Color.YELLOW);
 		frmAddStudentGroup_1.setResizable(false);
 		frmAddStudentGroup_1.setTitle("Time Table Management System");

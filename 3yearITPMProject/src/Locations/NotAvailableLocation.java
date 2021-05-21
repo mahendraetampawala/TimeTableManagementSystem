@@ -186,7 +186,7 @@ public void refreshtable() {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setBackground(SystemColor.inactiveCaptionBorder);
+		frame.getContentPane().setBackground(new Color(51, 0, 0));
 		frame.setBackground(Color.YELLOW);
 		frame.setResizable(false);
 		frame.setTitle("Time Table Management System");

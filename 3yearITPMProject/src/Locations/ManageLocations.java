@@ -125,7 +125,7 @@ public class ManageLocations {
 	private void initialize() {
 		frmMangeLocationsGroup = new JFrame();
 		
-		frmMangeLocationsGroup.setBackground(new Color(51, 0, 0));
+		frmMangeLocationsGroup.getContentPane().setBackground(new Color(51, 0, 0));
 		frmMangeLocationsGroup.setResizable(false);
 		frmMangeLocationsGroup.setTitle("Time Table Management System");
 		frmMangeLocationsGroup.setSize(1350, 728);
