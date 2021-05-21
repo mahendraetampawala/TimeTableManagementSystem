@@ -26,12 +26,17 @@ import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumnModel;
 
 import Connection.DBConnection;
+import DaysNHours.AddWorkingDays;
 import Home.welcome;
 import Lecturers_Management.AddingLecturers;
+import Location.ManageLocations;
+import SessionRooms.ManageAddSessions;
 import Sessions.AddSessions;
+import Statistics.StatisticsGraph;
 import Student_Groups.AddStudentGroups;
 import Subjects.AddSubjects;
 import Tags.AddTags;
+import Timetables.LecturerTimeTable;
 import net.proteanit.sql.DbUtils;
 
 import javax.swing.JComboBox;
@@ -241,6 +246,11 @@ public class AddConsecutiveSession {
 		JButton btnNewButton_4 = new JButton("Working days/Hours");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
+				AddWorkingDays workingdays=new AddWorkingDays();
+				workingdays.main(null);
+				frame.setVisible(false);
+
 				
 			}
 		});
@@ -265,6 +275,9 @@ public class AddConsecutiveSession {
 		JButton btnNewButton_6 = new JButton("Locations");
 		btnNewButton_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ManageLocations mlocation =new ManageLocations();
+				mlocation.main(null);
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton_6.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -288,7 +301,9 @@ public class AddConsecutiveSession {
 		JButton btnNewButton_8 = new JButton("Session Rooms");
 		btnNewButton_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				ManageAddSessions sroom=new ManageAddSessions();
+				sroom.main(null);
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton_8.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -299,6 +314,9 @@ public class AddConsecutiveSession {
 		JButton btnNewButton_9 = new JButton("Generate Timetables");
 		btnNewButton_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				LecturerTimeTable tt=new LecturerTimeTable();
+				tt.main(null);
+				frame.setVisible(false);
 			}
 		});
 		btnNewButton_9.setFont(new Font("Times New Roman", Font.BOLD, 20));
@@ -307,6 +325,14 @@ public class AddConsecutiveSession {
 		panel_1.add(btnNewButton_9);
 		
 		JButton btnNewButton_10 = new JButton("Statistics");
+		btnNewButton_10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				StatisticsGraph statistics=new StatisticsGraph();
+				statistics.main(null);
+				frame.setVisible(false);
+			}
+		});
 		btnNewButton_10.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		btnNewButton_10.setBackground(Color.CYAN);
 		btnNewButton_10.setBounds(10, 538, 213, 38);
